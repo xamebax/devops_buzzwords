@@ -7,60 +7,89 @@ class Parser
 
   # list heavily influenced by
   # http://www.stackdriver.com/top-devops-influencers-blogs-follow/
-  BLOG_LIST = { 'Andrew Hay' => 'http://www.andrewhay.ca/',
-                'Goat Can' => 'http://goatcan.wordpress.com/',
-                'Gene Kim' => 'http://itrevolution.com/devops-blog/',
-                'ScriptRock' => 'http://scriptrock.com/blog/',
-                'DevOpsGuys' => 'http://blog.devopsguys.com/',
-                'Kitchen Soap' => 'http://www.kitchensoap.com/',
-                'Scalable Startups' => 'http://www.iheavy.com/blog/',
-                'Socialized Software' => 'http://socializedsoftware.com/',
-                'Marten Mickos' => 'https://www.eucalyptus.com/blog/11',
-                'Agile Sysadmin' => 'http://www.agilesysadmin.net/',
-                'Kevin Behr' => 'http://www.kevinbehr.com/',
-                'Build Doctor' => 'http://build-doctor.com/',
-                'TechnoCalifornia' => 'http://technocalifornia.blogspot.com/',
-                'Adrian Cockcroft' => 'http://perfcap.blogspot.com/',
-                'Test Obsessed' => 'http://testobsessed.com/',
-                'Dominica DeGrandis' => 'http://www.ddegrandis.com/blog',
-                'Snipe.net' => 'http://www.snipe.net/',
-                'Liz Keogh' => 'http://lizkeogh.com/',
-                'Bratty Readhead' => 'http://blog.brattyredhead.com/',
-                'Patrick Debois' => 'http://www.jedi.be/',
-                'Chris Read' => 'http://blog.chris-read.net/',
-                'Kartar' => 'http://www.kartar.net/',
-                'Morethanseven' => 'http://www.morethanseven.net/',            #+
-                'blog dot lusis' => 'http://blog.lusis.org/blog/archives'      #+
-              }
+
+  @blog_list = { 'Andrew Hay' => 'http://www.andrewhay.ca/',
+                 # ^ Scrape all '/p', click "Older Posts"
+                 'Scalable Startups' => 'http://www.iheavy.com/blog/',
+                 # ^ Scrape all /div/p, then click "Older posts"
+                 'Kevin Behr' => 'http://www.kevinbehr.com/kevins-blog.html'
+                 # ^ keep clickin on << Previous till the end of time
+               }
+
+  @blog_list_other = { 'Agile Sysadmin' => 'http://www.agilesysadmin.net/',
+                       # ^ inconsistent links to blog posts :(
+                     }
+
+  @blog_list_more_next = { 'Socialized Software' => 'http://socializedsoftware.com/',
+                            # ^ Click "More", then "next"
+                           'Kitchen Soap' => 'http://www.kitchensoap.com/',
+                           # ^ "Continue reading...", then "Next Page" x10,
+                           # then /div/div/p
+                           'Marten Mickos' => 'https://www.eucalyptus.com/blog/11',
+                           # ^ Click "Read more", then "next"
+                           'Gene Kim' => 'http://itrevolution.com/devops-blog/',
+                           # ^ "Read More…", "Older Entries", scrape
+                           # /html/body/div/div/div/p
+                           'Patrick Debois' => 'http://www.jedi.be/'
+                           # ^ scrape all p's, click "next"
+                         }
+
+  @blog_list_wordpress = { 'Goat Can' => 'http://goatcan.wordpress.com/',
+                           'Liz Keogh' => 'http://lizkeogh.com/',
+                           'Test Obsessed' => 'http://testobsessed.com/',
+                           'Build Doctor' => 'http://build-doctor.com/',
+                           'Chris Read' => 'http://blog.chris-read.net/'
+                         }
+
+  @blog_list_blogpost = { 'TechnoCalifornia' => 'http://technocalifornia.blogspot.com/',
+                          'Adrian Cockcroft' => 'http://perfcap.blogspot.com/'
+                        }
+
+  @blog_post_simple = { 'Dominica DeGrandis' => 'http://www.ddegrandis.com/blog',
+                        # one-page blog, scrape all /p
+                        'Snipe.net' => 'http://www.snipe.net/',
+                        # one-page blog, /html/body/div/div/div/div
+                        'DevOpsGuys' => 'http://blog.devopsguys.com/',
+                        # ^ One-page with endless scrolling, scrape all ps and lis
+                      }
+
+  # DONE! :)
+  @blog_list_one_page = { 'Morethanseven' => 'http://www.morethanseven.net/',
+                          'blog dot lusis' => 'http://blog.lusis.org/blog/archives',
+                          'Bratty Readhead' => 'http://blog.brattyredhead.com/blog/archives',
+                          'Kartar' => 'http://www.kartar.net/'
+                        }
+
+  @fetcher = Mechanize.new
+  @fetcher.redirect_ok
 
   class << self
-    def create_files
-      BLOG_LIST.each_key do |file_name|
-        safe_name = file_name.gsub(' ', '_').gsub('.', '_').downcase
-        instance_variable_set("@#{safe_name}_database", (File.new("#{Dir.pwd}/corpuses/#{safe_name}.txt", 'w') unless File.exist?("#{Dir.pwd}/corpuses/#{safe_name}.txt")))
+    def scrape_blog_list_one_page
+      @blog_list_one_page.each_key do |blog|
+        safe_name = blog.gsub(' ', '_').gsub('.', '_').downcase
+        @corpus = File.new("#{Dir.pwd}/corpuses/#{safe_name}.txt", 'w')
+        @fetcher.get(@blog_list_one_page[blog])
+
+        @fetcher.page.links_with(href: /.*\/20.*/).each do |link|
+          begin
+            p link
+            link.click
+            @fetcher.page.search((
+              if blog == 'Kartar'
+                "//*[@id='main']/article/div/div/p"
+              else
+                "//*[@id='content']/div/article/div/p"
+              end)).each do |paragraph|
+              @corpus << "#{paragraph.content}\n"
+            end
+          rescue Mechanize::RedirectLimitReachedError
+            next
+          end
+        end
       end
     end
   end
 
-  Parser.create_files
-  fetcher = Mechanize.new
-
-  blog_dot_lusis_main = fetcher.get(BLOG_LIST['blog dot lusis'])
-  fetcher.page.links_with(href: /.*\/20.*/).each do |link|
-    p link
-    link.click
-    fetcher.page.search('//*[@id="content"]/div/article/div/p').each do |paragraph|
-      @blog_dot_lusis_database << paragraph.content
-    end
-  end
-
-  morethanseven_main = fetcher.get(BLOG_LIST['Morethanseven'])
-  fetcher.page.links_with(href: /.*\/20.*/).each do |link|
-    p link
-    link.click
-    fetcher.page.search('//*[@id="content"]/div/article/div/p').each do |paragraph|
-      @morethanseven_database << paragraph.content
-    end
-  end
+  Parser.scrape_blog_list_one_page
 
 end
