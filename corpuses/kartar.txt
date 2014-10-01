@@ -1,0 +1,273 @@
+One of the challenges of centralized logging is that log formats blossom like
+umbrellas in cheap cocktails. One of the few apparent exceptions to this is Syslog. I mean it is governed by an
+RFC right? It’s a standard in logging right? At this point some of you in the know are sniggering: “Syslog has an RFC… Syslog standards… hahahahaha…”
+So what’s so funny? Well Syslog IS a standard. It’s just that some of the log
+output that vendors create and then call Syslog doesn’t quite match that standard. Whilst:
+looks simple. It often isn’t executed perfectly.
+These implementation failures aren’t representative of all vendors but given the wide-ranging use of Syslog across operating systems, network devices, data center infrastructure and applications subtle variants have been introduced. Indeed, many of these variants are pretty close to each other and the standard. Unfortunately, for a lot of log processing tools, even subtle differences can throw off their parsing of events.
+We can use Logstash1 to demonstrate some of the challenges of Syslog variants. Logstash has an input plugin called
+syslog.
+This plugin combines a TCP/UDP listener on port 514 and listens for
+RCF3164-compliant events like:
+It parses incoming events using the following match:
+With the SYSLOGLINE regular expression expanding to:
+This works for a whole lot of Syslog output but if the output isn’t
+generating RFC-3164 compliant messages then Logstash will choke. Let’s take a
+little example. Here is a message from a to-remain-nameless firewall vendor.
+And here is what happens when it hits our example Logstash syslog input configuration.
+You can see the dreaded _grokparsefailure error which means Logstash can’t “grok” the incoming log message because it is not what Logstash thinks a Syslog message should be.
+So what do we do about this and messages like it? Well at first glance, the syslog input is a pretty blunt instrument. Indeed the Logstash community has talked about removing it repeatedly over the last couple of years. However, as we’re going to discover, replacing the syslog input is actually pretty easy using a combination of some different plugins.
+To make this replacement we need to handle two parts of the syslog input plugin’s behavior:
+Let’s start with replacing the network listener using the tcp and udp input plugins. We’d replace our existing syslog block in our Logstash configuration with:
+Here we’ve specified two network input plugins. Both are configured to listen on port 514, the first via TCP and the second via UDP. Both assign incoming messages a type of syslog. This provides listeners on both protocols that are waiting for messages on the default Syslog port.
+Next, let’s replace the parsing element of our syslog input plugin using a grok filter plugin.
+Here we’ve added a filter section and populated it with a grok filter. Our grok filter mimics the syslog input plugin’s existing parsing behavior. This caters for any appropriately formatted Syslog messages we might receive. It uses the type field to match any incoming events tagged with syslog (most likely by our tcp and udp input plugins) and pass them to the filter. Let try it with a Syslog message now:
+We should get back a Logstash event structured like this.
+But this doesn’t solve our problem of incorrectly formatted Syslog messages. So we need to add some logic to handle failed parsing and then do something with those failed messages.
+Here we’ve added a catch-all for failed syslog messages. If an event fails to parse via our grok plugin then it gets a tag of _grokparsefailure. We’ve specified a new output section and captured events with a type of syslog and the _grokparsefailure in its tags. Each of these events is then added to a file using the file plugin.  The capture file is located at /var/log/failed_syslog_events-%{+YYYY-MM-dd}. The %{+YYYY-MM-dd} appends a date to the file to help with log rotation. We could also generate instant messages or push events to a destination like IRC or Campfire or the like. Or we could use any one of the numerous Logstash output options. We could also add metrics or aggregation to capture volumes of failed events.
+We can then use this data to add additional parsing configuration to Logstash to process Syslog event variants.
+Let’s say we have an incoming failed event. We can use the earlier event that failed to parse.
+Let’s add some additional parsing to our filter section to process this specific class of event.
+In our new filter section we’ve specified two parsing mechanisms. The first tests for events with a type of syslog and which contain id=firewall in the event’s message. This will pick up all of our firewall events. We’ve then created a grok plugin with a regular expression match for our event. We could also use the kv plugin here as much of the data is in the form key=value.
+So now if we sent our firewall event it’d be correctly parsed and would result in an event that looked like:
+We could also add further conditionals that match other variant events.
+Finally, if the first conditional isn’t matched, then Logstash uses the next conditional to try our default Syslog parsing on the event. In our case if that didn’t match it’d trigger our catch-all collection of events that failed to parse and be put in our /var/log/failed_syslog_events-* file.
+So here we’ve seen how to manage poorly or variant formatted Syslog messages using Logstash. We’ve developed a detection and cataloguing method for errant messages. We’ve also demonstrated a way to parse multiple variant Syslog messages.
+As most people know I am a logging fanboi. I’ve been endlessly fascinated with logs and log management. Last year I even took that a step too far and wrote a book about Logstash. Consequently, I am always looking at new logging tools, tricks and techniques. One of those popped up a while ago: Heka.1 When I saw Heka last year I made a note to look at it more closely. But due to … well life … I never got around to it. It was mentioned to me again this week and since I had a few spare cycles I thought I’d install it and try it out.2  
+Heka is written in Go by the Mozilla Services Team and released as open source under the Mozilla Public License (v. 2.0). Like Logstash it is built as a core logging engine with plugins for inputting, decoding, filtering, encoding and outputting data. Heka plugins can be written in either Go or in some cases Lua.
+Heka is available as binary and package installers for Linux and OS X in a variety of flavors (Tarball, DMG, DEB, and RPM) or you can install it from source. I’d recommend sticking with the binaries or packages, the source installation is complex and prerequisite-heavy.
+You can download the binary or package of your choice from here. I’m going to install a DEB package on an Ubuntu host for my local testing.
+This will install the Heka daemon, hekad, to /usr/bin and some supporting files and binaries. It doesn’t install any service management or configuration so you’ll need to provide that yourself.
+Now we’ve got it installed let’s try running the hekad daemon.
+Okay - looks like we need some configuration to get started. The file extension on the /etc/hekad.toml file is interesting3 as it indicates the project is using the TOML configuration format.
+So let’s create a Heka configuration. What we want our example configuration to do is:
+To do this let’s create a hekad.toml file in /etc.
+And populate our file with configuration:
+The TOML format breaks our configuration into sections marked with [section] blocks. Each section we’ve specified correlates with a Heka plugin. We could specify a [hekad] section for configuring the Heka daemon itself. Let’s step through each section.
+The [LogstreamerInput] section is a LogstreamerInput input plugin that we’ve defined. The LogstreamerInput input tails one or more log files. In our case the /var/log/auth.log file. This will watch the /var/log/auth.log file and grab any incoming events for processing by Heka.
+In our case each line will be grabbed and become the payload for a Heka event. Usually we’d also have a decoder plugin specified in the input. A decoder plugin parses the contents of the line and extracts useful data from it, for example you might use a rsyslog decoder to extract Syslog information from our log file. This adds context from each line like the process and priority.
+So thus far we’ve defined an input to gather events and processed those events into Heka’s event format. Now we want to do something with the events. Here we could filter them or output them in a variety of formats. In our case we’re going to output events to STDOUT. To do this we define these two sections:
+First we define an encoder plugin called PayloadEncoder. Encoders turn Heka events into other formats, for example generate alert events. In this case the PayloadEncoder plugin extracts the payload from the Heka event and convert it into a byte stream.
+Next, we’ve defined the LogOutput output plugin. This plugin logs messages to STDOUT using Go’s log package. Inside the output plugin we’ve used the message_matcher field to match messages. In our case we’ve used TRUE to grab all messages. You can configure this field in output plugins to make a variety of decisions about what messages to process with the output.
+It also compares favorably with the equivalent Logstash configuration.
+Now we’ve got a simple configuration let’s run Heka and see what happens. We start Heka by running the hekad binary and specifying the location of our configuration file with -config.
+We can see that Heka has loaded some required plugins and started the daemon. We’ve also started the LogOutput output and the LogstreamerInput input have also both been started. The LogstreamerInput opens the /var/log/auth.log file and reads it from the first entry. If the file has previously been opened by the input then it’ll resume from that point.
+We can then see a line from our /var/log/auth.log file outputted via the LogOutput output to STDOUT. So looks like our very simple configuration worked and we’re getting the right output.
+Overall, the whole project is still pretty young, for example it has nowhere near the corpus of plugins and integrations that Logstash provides. I find the configuration language somewhat cumbersome but that is likely a reaction to my familiarity with Logstash’s configuration format rather than an inherent flaw. Like Logstash, Heka does have a web console but it lacks the power of Kibana. Although it is also possible to output Heka logs to Elasticsearch and use Kibana on top. I’ve always thought Logstash’s natural flow into Elasticsearch does make search very intuitive and being able to replicate it here is potentially makes Heka a seamless drop-in for an end user.
+The documentation is detailed and solid and certainly has a stylistic edge on Logstash’s somewhat rough visual presentation. The Heka documentation could do with some easier getting started material and more tutorial-oriented material. The project could also do with some better packaging to add service management and ensure it works out of the box.
+It does have some fundamentally interesting differences to Logstash. It’s written in Go which is likely to result in pretty solid performance and make concurrency a lot simpler. I find Logstash fast but JRuby in the JVM is a pretty hefty runtime and often a lot of overhead. I also very much like the dynamic plugin model. Having to stop and start Logstash to reconfigure it is one of my pet peeves about Logstash. I’m going to continue to keep an eye on Heka and see how it evolves.
+I am pleased to announce version 1.2.0 of The Docker
+Book is out!
+It has a new section in chapter 7 on using Consul for service discovery
+with Docker.
+If you’ve bought the book you can use your existing download link to
+upload the updated book. If you have issues with the link then let me
+know and I’ll re-issue your link.
+If you haven’t yet purchased the book then you get it from my website
+here or via Amazon
+Kindle.
+There’ll be future updates coming as Docker grows and develops. You can
+also check for errata here.
+Please report any issues or problems you find. Docker moves fast and,
+although I’ve been updating the book frequently, bugs and issues may
+sneak in. You can contact me here to
+report anything you find.
+I am pleased to announce version 1.1.0 of The Docker
+Book is out!
+It has a whole new chapter on orchestration, focused on Fig.
+If you’ve bought the book you can use your existing download link to
+upload the updated book. If you have issues with the link then let me
+know and I’ll re-issue your link.
+If you haven’t yet purchased the book then you get it from my website
+here or via Amazon
+Kindle.
+There’ll be future updates coming as Docker grows and develops. You can
+also check for errata here.
+Please report any issues or problems you find. Docker moves fast and,
+although I’ve been updating the book frequently, bugs and issues may
+sneak in. You can contact me here to
+report anything you find.
+I am pleased to announce that The Docker Book 1.0 has been released!
+If you pre-ordered the book you will shortly get an email with a
+download link in it. If you don’t receive the download link then please
+check your Spam folder. If it’s not there please check which email
+address you used to purchase the book. If you still don’t have the email
+please contact me and I will investigate.
+If you haven’t yet purchased the book then you get it from my website
+here or via Amazon
+Kindle.
+This is just the 1.0 release of the book and as Docker moves forward the
+book will be updated to reflect changes and new features. It will also
+be extended to discuss:
+You’ll receive announcements of major releases via this mailing list.
+You can also check for errata
+here. Please also report any issues or
+problems you find. Docker moves fast and, although I’ll be updating the
+book frequently, bugs and issues may sneak in. You can contact me
+here to report anything you find.
+A few people have asked me about my presentation environment recently. I present about 30-40 times a year and I’ve got my process (still not funny apparently) and tooling pretty much down pat.
+For my content, I’ve long been a fan of Hakim El Hattab’s Reveal.JS. Reveal.JS is a presentation framework that allows you to create awesome slideshows that can be displayed via your browser via a builtin web server.
+You can specify slides in HTML or Markdown.
+I’ve recently combined this with Wetty, a terminal in the browser that allows me to have in slide SSH. No longer do I need to switch between my terminal and my slides whilst demo’ing. I find that’s pretty bloody cool (and people love it). I sometimes have as many people ask me how I do the “secret in browser terminal magic” than I do about the topic of my presentation.
+
+One of the annoying aspects of using both tools is that they do get updated fairly regularly and installation is still basic and via git clone. This means I need to keep them up to date to fix minor issues. It also means I end up with a checkout of both tools inside each repository that I store my presentations in, like my Introduction to Docker talk.
+So I decided that I’d make my life easier by creating a Docker image for my presentation stack. I designed it so that the data (my content) would be separated from the code (the presentation stack). Each presentation repository contains the following files:
+The slides/slides.html file holds my slides and the images directory holds any images I am using in my slides.
+I then have a Docker image that holds my presentation stack. Here’s the Dockerfile for my image.
+The Dockerfile is pretty self-explanatory. I base the image on Ubuntu 14.04 (to get the latest NodeJS). I install NodeJS, NPM, and Git. I then install Reveal.JS, its dependencies and Grunt to power it.
+By default Grunt only binds the Reveal.JS server to localhost so I edit the Gruntfile.js to update the server. This will bind Grunt to all interfaces so I can expose my presentation on the container’s external network interface.
+I also add Wetty and its dependencies.
+I then add some template content and images I use and a Docker CSS theme to render my slides using Docker’s colors and styles.
+Finally I set my working directory to the presentation directory, expose port 8000 and specify a command to run, grunt serve, when a container is launched from this image. So when a container is launched Grunt will serve out my presentation on port 8000, which I can then directly map 1:1 or on a port in Docker’s default port range.
+I can then build my image (I actually use a Trusted Build but I could also build from the command line):
+Then launch a container from my image!
+This creates a container called docker_presentation and mounts /Users/james/src/intro-to-docker/images and /Users/james/src/intro-to-docker/slides into the container. I would update these paths for the specific presentation I am loading. The container is launched daemonized and port 8000 inside the container is mapped to port 8000 outside on the host.
+If I now browse to http://localhost:8000 I will see my Introduction to Docker presentation.
+If I wanted to launch another presentation I could create a new container like so:
+I’ve updated my volume mounts to the new presentation and I am now mapping the port to one of Docker’s ports. This allows me to run more than one presentation locally rather being restricted to port 8000. Let’s see which port got assigned with the docker port command.
+If I now browse to http://localhost:49159 I will see my Ops Mythology presentation.
+Now I don’t need to worry about anything in my presentation stack or worse duplicate its code in every presentation. Now all I need to do is maintain my content and my images and I am done!
+You can find the code for this here and the Docker image is available on Docker.io here.
+This tweet (and thanks to Chris Coyier for tweeting this
+line from Jennifer Dary’s talk at
+Convergese
+2014) really
+hits home for me.
+There are lots of reasons people leave companies. Not all of them are
+bad. Some of them have to do with the company and some of them have to
+do with the individual. Companies evolve, they change, they move
+locations, they pivot, they grow and shrink, they focus on different
+products, hire different types of people, leadership changes and
+colleagues move on. All of these changes can change the culture of a
+company and influence people’s reasons for working there.
+People change too. What I looked for in an employer when I was 20 is
+different from what I look for now. Where and how I want to work has
+also changed. For many friends, having a family has dramatically changed
+what they seek in an employer and how they interact with them. And
+sometimes after doing something for a while some people just need to
+change.
+I don’t think the relationship between an employee and an employer
+should be binary, linear, or singular. We build relationships by being
+understanding of the needs of others, by having empathy. It’s taken a
+long and painful road for me to learn that, with some very bad
+professional relationship experiences as teaching tools.
+Now when someone says to me “Look I want to do something different” my
+response is always: “How can I help?” And if there isn’t something
+internally that works then that help extends to finding alternatives
+outside the company.
+That outcome really doesn’t have to be a negative one when a colleague
+makes a voluntary departure. Reward the loyalty they provided you by
+being supportive of their need to change. That is what makes an
+“employer of choice”. It’s also personally and professionally rewarding.
+I like making folks happy and I love that I expand my network doing it.
+Nor does that outcome have to be the end of a relationship forever. That
+person is might not be a fit for the company right now but they might be
+again in the future. Being supportive and positive about their departure
+leaves that door open. Allowing you to bring them back together with the
+experience and the perspective of their intervening role or roles. If
+you’ve burnt the bridge with them then you close yourself off from that
+opportunity.1
+So treat your former colleagues as alumni and, more importantly, as
+potential advocates for the company. Their goodwill has real value. They
+are potential recruiters for you, allowing you access to their networks.
+They are advocates for you with candidates who seek out their opinion on
+you as a potential employer. They are promoters and distributors of your
+products and services. They may even be future colleagues again.
+I type a lot of Docker commands every day. As a result I’ve made a habit
+of creating Bash functions and aliases that I find useful and adding them to
+my .bash_profile.1
+My first useful alias, dip, is a short-cut to the docker inspect
+command that allows you to inspect a container. One of the command’s
+features is using the --format flag to select a subset of the
+inspection data. In this case I’m returning the container’s IP address. 
+This is my alias:
+You can then type dip and the container ID or name:
+This will return the IP address of the specific container.
+Once you’re done with a container it is easy to use the docker rm
+command to remove it. But sometimes you want to delete a lot of
+containers at once. This function provides a shortcut that removes all
+non-running containers. It works by passing the output of the docker
+ps -q -a command, which returns a list of container IDs, to the
+docker rm command.
+To do this removal I wrote this function:
+I can then run:
+You can see that three containers have been removed but one running
+container has been skipped.
+Very similar to the function for removing containers is my function for
+removing images. It passes the output from the docker images -q
+command to the docker rmi command. 
+This is the function. 
+And when run we’ll see:
+We can see it has removed some images but skipped another that is in
+use.
+Next I have two simple aliases that provide shoutcuts to my most common
+options for running interactive and daemonized containers.
+The first alias runs a daemonized container.
+I use it like so:
+This will launch a daemonized container running my jamtur01/ssh
+image. I could also add a command override at the end of the command
+also.
+My second alias is very similar but runs an interactive container
+instead.
+I use this like so:
+This will launch a interactive container with a TTY running the
+ubuntu image and executed with the /bin/bash command.
+Finally I have a function for interacting with the docker build command.
+The function allows me to skip typing the -t flag for tagging my
+new images.2
+I use it like so:
+It assumes a Dockerfile in my current directory and then builds that
+file and tags the subsequent build with jamtur01/ssh.
+I hope those are useful to folks and feel free to add others you use in
+the comments.
+I am pleased to announce that The Logstash Book has been extensively updated to reflect the changes in the Logstash 1.4.0 release. There is a lot of new content, deprecations and updates to reflect the changes in Logstash including new installation methods, changes to the configuration language and a variety of plugins.
+It also includes a bunch of updates from awesome folks who have submitted errata and pointed out issues. Please keep this up - it really helps me!
+You can find a full list of the changes and updates here.
+If you’ve previously bought the book then this update is totally free (if your download link has expired just email me and I’ll renew it).
+Otherwise you can purchase the book from the website. Or on Kindle from Amazon.
+Please continue to send me feedback, reviews and errata as it is very much appreciated!
+Creating a Docker Dockerfile to build an
+application is pretty easy. But what if you already have a large
+collection of Puppet modules (or Chef cookbooks) that you want to use to
+build your applications? We’re going to see how easy it is to make use
+of those modules inside a
+Dockerfile.1
+We’re first going to build a image that has Docker apps with
+Puppet installed. We’ll also add Tim
+Sharpe’s very cool Librarian-Puppet to
+the image. Librarian-Puppet is a bundler for your Puppet modules. You
+can use it to select and install modules from GitHub or the Puppet Labs
+Forge.
+Let’s create a Dockerfile to build our Puppet image.2
+This Dockerfile will use an Ubuntu-based image and then install
+Puppet and Librarian-Puppet via RubyGems.
+To build this image we run:
+Here we’ve built a new image called jamtur01/puppetbase. We’re going
+to use this image as the basis for our new application image.
+Next we need to create a Puppetfile file which Librarian-Puppet uses to
+install the required Puppet modules. As our example we’re going to
+install a basic Nginx server. 
+The Puppetfile tells Librarian-Puppet to install the
+puppet-nginx module from GitHub.
+Now we need to create another Dockerfile for our application image.
+This Dockerfile uses the jamtur01/puppetbase image we’ve just
+created. It adds our local Puppetfile file to the root of the image
+and then runs librarian-puppet install to install our required
+modules (by default into /modules).
+We then install Nginx via the puppet-nginx module using the puppet
+apply command. This runs Puppet locally on the host (i.e. without a
+client-server Puppet installation). 
+In this image we’re just installing Nginx itself. We could also install
+virtual hosts or a web application or anything else that the Nginx
+module supports.
+We can now build our application image like so:
+Finally let’s launch a container from it.
+We’ve launched a new container with the ID of fd461a1418c6, run it
+daemonized and told it to open any exposed ports, in our case port
+80 that we EXPOSE‘ed in the Dockerfile. Let’s
+check the container and see what port it has mapped to Nginx.
+Now let’s browse to port 49158 to see if Nginx is running.
+
+Woot! We’ve got Nginx installed via Puppet. You could easily repeat this
+process for any Puppet-based (or other CM tool) application or
+infrastructure.3

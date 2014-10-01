@@ -1,0 +1,908 @@
+
+I’ve been trying to think of a thoughtful and engaging way to tell everyone the news. I feel like I should reflect on the last two years of independent consulting life and offer up some deep thoughts and wise advice.  But I got nothing.
+Starting August 5th, I’ll be an Opscode employee.
+The truth is, I’m super excited to go to work with my friends and eventually move out of the snow-addled state of MN. A big reason I am independent is because I was tired of being an Enterprise employee.  I have always been willing to consider work with small companies but I also want a basis of friendship with my co-workers.
+I’m confident enough about who I am and what I do now that I’m not interested in what I have been calling “arranged marriage” jobs - the kind where you have a few interviews, get really excited and then discover you’ve walked into a clusterfk egofest.  I don’t want to have to evaluate companies and people on the basis of a few interviews. I also don’t want to have to engage in the inevitable dominance posturing and pissing contests that seem to be inevitable with many tech teams.
+On the other hand, working with smart people is one of the best things in the world. Being independent means you’re often working alone and don’t get to hang with other smart people very much. It’s why I’m so enthusiastic about conferences, because that’s where I get to hang with my smart friends.
+You can read in the very first post on this blog about how transformational it was for me to begin working with open source software, and Chef played a pivotal role in that.  I’ve worked with the tool now for over 3 years and I love it.
+While I do love the product, what draws me to Opscode is their attitude about culture, both internally and the community. HugOps is a real thing and I love that it’s a lifestyle choice. Between this and the fact that I like without reservation every Opscoder I’ve met makes this the beginning of an exciting adventure for me.
+I expect shenanigans to ensue almost immediately.
+I’ve been a bit reluctant to enter this discussion on my blog; partly because there are some amazing, thoughtful posts already that eclipse anything I could say and also because any of these discussions seem to spark a lot of outrage and anger regardless of the actual topic content. That kind of drama is a big turnoff for me.   But I did want to say a few things about a recent experience at devopsdays because it seems to be an angle we aren’t discussing.
+At devopsdays Silicon Valley this year, one of the breakout sessions was “Encouraging Women in Dev/Ops,” led by Doug Ireton, one of the awesome automation engineers at Nordstrom’s.  I was already dragging from Velocity and hadn’t planned to go to any sessions, much less yet another “how do we get more women in tech” discussion.
+If I sound impatient, it’s because I am a bit.  In general, I don’t have any really strong opinions on the “women in tech” discussions. This is because I feel we have the same discussions over and over again without covering any new ground or making any difference in how people think. This may actually not be a fair feeling as the discussion has certainly changed the way I think. Or, more accurately, it’s made me think about it.  I don’t actually think we should be worrying about how to get MORE women in tech as much as how to make it a comfortable place for people who are already here. Take care of that and balance will come eventually.
+I entered tech during the 2000s internet boom where any warm body would do and you didn’t have to be a decent human being to keep your job. I know this because I often was not a decent human being myself. I was grumpy and petulant, at least in my head, and folks from those early days would probably agree (Kiosk level 2 support team who I pissed off in a major way and worked hard to repair that relationship, are you out there anywhere?). I did eventually grow up and become a moderately self-aware decent human being and have even managed to develop some empathy for people outside my direct life experience.
+Not only have I worked in Tech most of my adult life, my dad was a wargamer and RPGer. I was exposed to many strains of nerds and geeks growing up and some of the biggest treats of my 8 year old self involved getting to stay up late with the grownups while they played D&D and maybe even being given a character sheet.
+I lived in a house with 4 other guys in college where I learned to watch Star Wars and Repo Man on repeat on one TV while playing video games on the second TV until 2am.
+What I’m trying to communicate with this history is that, while there are certainly some women in all of these lifestyle choices (wargames, rpg, tech support, web ops), we make up a small percentage. So I spent my life getting used to being one of very few women in any tech or social group. Sometimes it’s fine, sometimes it’s not fine. It largely depends on the company I’m keeping.
+Regardless, I was taught to communicate by social groups who probably shouldn’t be teaching anything. But I learned early that guys tease and insult when they like you and that you shouldn’t worry until they are polite, kind or ignore you.  That also became my style of communicating for a long time because that’s what I knew.   To this day I am comfortable with it. Dick/Boob jokes don’t bother me. Profanity doesn’t bother me. It was co-workers on the clock that introduced me to such great things in life as Triumph, the insult comic dog, South Park and all kinds of inappropriately funny youtube videos. Calling me a girl doesn’t bother me. Calling me a princess doesn’t bother me because there are plenty of boy princesses out there and I’ve called them on it.
+Things that DO bother me: overt misogyny, hatefulness and guys who constantly bitch at work about how their wife makes their life miserable.  People who won’t admit there is a problem with “isms” in the world because they themselves don’t perpetuate it or see it. There is a big difference between a dick joke in private with friends/colleagues and making one at a party where you don’t know people. Context is everything.
+To be clear, I’m not saying I’ve sailed through life happily making dick jokes. I have experienced a lot of internal turmoil and emotional anguish over all-guy teams that I have been on, especially early in my career where it was still really hard to gain acceptance and professional respect.  But 10 years ago it was HTFU or GTFO. And so that’s what I did. And when you make that a condition for acceptance, you greatly shrink the available population and personality types who stick around, both men and women.
+The modern discussion of sexism (specifically because it relates to me) has taken me from an attitude of “most of it doesn’t bother me and I don’t know why people care” to “A lot of perceived exclusionary sexism doesn’t bother me, but other people have different expectations from their professional lives now; I entirely respect that and will work to make  my professional sphere a welcoming and safe place.” In order to attract the next generation of women into tech, everyone is going to have to come at least this far in their thinking.  And it’s not just sexism; it’s ableism, genderism, homophobia, and on and on.
+But to get back to why I’m bored with the women-in-tech discussion people keep wanting to have, I don’t see it making a diff and I’m still getting a big vibe from guys of “I don’t do it and I don’t see it and how is it possibly a problem?”  I ended up going to the discussion because I really like Doug and wanted to be supportive of his efforts.  In general, it was pretty much what I always hear and it usually boils down to “we’re really nice guys and we can’t find any women to hire.”  I get that there are not a lot of us out there. BUT…
+My answer to everyone who feels like this, and I gave it to the Nordstrom’s guys when we talked about it later, is this: work on your own self-awareness. I’m sure you think you’re a reasonable person who never had a sexist thought in their life.  I’m pretty sure this is not true, because even I have made pissy comments about women drivers, although only in the privacy of my own car by myself. But I still think it. And I’m a woman!
+So work on your self awareness. If you really care, go around to every woman in your professional and personal life and ask them to please offer you feedback if they feel you’ve ever done something sexist or demeaning either to them or in their presence, no matter how trivial it seems. Because I have news for you guys, we don’t offer that stuff uninvited. We expect to be scoffed at or ignored because so many people think sexism is drama. Example: I have a friend I’ve worked with at two places now and it took me 3 minutes to spit out “can I offer you some feedback?” before calling him on the fact that he’d talked over and for me in a meeting; something I find particularly galling.
+None of this is going to get MORE women in tech. But it’s going to comfort the ones who are already here and word of mouth is a particularly powerful advertiser, as every viral video ever should tell you.  And honestly, I think it’s going to do more for everyone if we clean up the house first before inviting more women over and asking them to help us clean it up for them.
+Yesterday I tweeted in frustration about being confronted with yet another screencast/video when searching for help on the internet.  This has been a growing frustration for me as I branch out away from pure command line/coding tools.
+I find help videos in general to be obnoxious. I read and comprehend fast and generally want to skim some text to understand the thing that I’m looking for.  I find “new user feature” videos that we end up from Google and stuff to be especially annoying.
+I get that not everyone wants to just figure stuff out, but I generally can figure things out way faster than you can tell me about it.
+A few months ago I was writing my first public talk and also using Keynote for the first time. I kept having to search the Internet for answers to questions because (2 years later) I’m still getting used to the way OSX presents things and am never sure where to look for formatting-type stuff. Something that really set me off was trying to figure out how to make new masters for Keynote. When I looked around, all I could find were videos lasting several minutes on the topic. Seriously.  All I wanted was a paragraph on the general method and maybe a line with the actual tool bar clicks to begin with. Eventually, on the second presentation I worked on, I found what I was looking for. But I was really annoyed by the whole exercise.
+On the other hand. I subscribe to RubyTapas. I find that an appropriate use of a screencast. Similar to a podcast, it’s a discussion of a complex topic that doesn’t have an answer at the end.  When I want to figure out how to do something, I want to read about it on stack overflow, not watch a movie. BUT, if I’m interested in the how and why of a learning topic, then I love a good screencast.  I especially like the short and sweet nature of the RubyTapas because they are not a major time commitment to listen to one.
+But if I have a question, and that question has a fairly simple answer like “click here, here and here and type these things” I’m not sitting through a slow moving video to find out the answer.  Yesterday  I was looking for the start command for a tool I’d just downloaded and, when I clicked on the “getting started with Tool” link, it took me to a screencast which is was sent me over the edge and caused that tweet.
+It was interesting to me that this is probably my top ever retweeted tweet. I think there’s an assumption out there that people want video instead of words. I never watch video on news sites either. I hate it. I want to skim stuff. Maybe places making these assumptions should recalibrate. Or maybe those of us who can read and comprehend faster than someone else can talk are actually in the minority? We’ll probably never know.
+This is the third post in a series about managing your Ruby Toolchain. Expect at least one more after this. You can also read:
+Pieces and Parts: Managing Your Ruby ToolChain(part 1) 
+Managing Your Ruby Toolchain Part 2: The Package Repo Rant
+Why I rant about package repositories: Static software without a repository is the pebble that becomes an avalanche. So many undesirable behaviors stem from no one owning the package collection.  Read the rant if you want details.  This is a practical discussion, although I’m not telling you what to do. I’m just telling you what I’ve done and what I’ve seen over the course of my career.  There are many ways to solve this problem. Do what works for you.
+This post grew so much that there is one more after it that specifically deals with some toolchaining tools and ideas as well as a few anecdotes on how I’ve dealt with some of these challenges in the past.
+Today we’re going to talk about:
+Tarball Orphans vs Artifacts vs Inbetweeners  
+The Internet
+An Approach to Repositories  
+Packaging Tarballs  
+Ruby Management   
+Ruby Toolchain Management
+What do I mean when I rant about tarballs? Basically I mean that pile of source you downloaded from the internet, or Tomcat package, JBoss tarball, Ruby source, whatever.
+What is exempt from my ranting  wrath? Custom code that you might tar up instead of jar/ear/war.  Anything that changes often shouldn’t be in our static package repository. Those are places to keep long term, install-once per server software.
+When I talk about tarballs, I mean tumbleweed off the internet.  When I refer to compiled code I’ll use the word artifact.  What’s an artifact? It might be a jar file you bundle with your deployed code. It might be a war file. It might be a tar of ruby code Or database artifacts.  Anything that’s your stuff, we don’t put that into package repositories.  We put it into artifact repositories like Artifactory and Nexus. People also use S3 storage to store and retrieve artifacts.
+Some things may not be easily categorized. Newer products get frequent updates that may require frequent patches or deployments. For example, I worked with a team that implemented Basho’s Riak which they updated frequently and ended up engaged in a disagreement with Ops on how often they could update it. The ops team wanted to restrict it to quarterly and the devs wanted much more frequently. This sort of management requires a custom solution that may be package-based or not.
+If your infrastructure has free access to the internet, that’s awesome. Many infrastructures have limited or no access to the internet.  Often the reasons for this seem silly.  But sometimes you can’t fight city hall, or you can but you need to save your fights for the life or death kind.  Your servers don’t need the internet to survive. Or they should not.
+Eventually you will find yourself needing stuff from the Internet. In order to work within restrictions, you can set up a Bastion host or AWS VPC infrastructure that can call out to the internet in order to create private mirrors of any repositories you need.  You can follow the slightly more difficult path of setting up an internal server that contains your repos that you need to sync in a way that doesn’t have direct access to the internet.
+Internet as Troublemaker
+Internet access brings its own set of problems as well. If you aren’t specific about package versions, with every server provision you could have slightly different versions of things installed.  This is a problem because it can cause erratic behavior across your infrastructure. If you have 1000 nodes built over the course of six months, each build wave can introduce incremental differences. When you control the packages in your internal repos, you exert a stabilizing effect, which is a good way to control your system without making it brittle.
+Even if sloppy package management doesn’t actually cause issues, it will be a suspect in any intermittent, mysterious problems. Picture an outage conference bridge including execs. Now envision yourself explaining to them how this mismatch isn’t a problem. Can you envision any explanation that doesn’t make you sound like a dolt?
+Example: A few years ago JBoss 5 shipped with a bug that was a major performance blocker but difficult to track down. It was later fixed in a minor patch release. Imagine having a JBoss package block that just says package "jboss" {action :install} and using an internet repo to install it. 6 months later you provision 100 servers from your trusty internet repo and over your peak season, the bug triggers but everything is weird because it’s only a problem on some servers.  Imagine tracking this down. (Yes this is a flawed example b/c as far as I know, there’s no internet repo with a JBoss rpm)
+If you’re a dev and you think this isn’t a problem, try chatting with a friend in the sysadmin/ops area before you poo-poo. If you’re a sysadmin and you think this isn’t a big deal, may we never be responsible for the same infrastructure.
+Be Conservative. As a rule it’s ok to use external signed key repositories for your base OS packages as those shouldn’t change. Tread carefully even with patch/update servers to ensure homogenous installs and any packages acquired from other internet repos (like EPEL) should be installed with explicit versions.
+Adopt Orphans Don’t let Internet-sourced software roam around your infrastructure unsupervised. If you need a package from the internet, it should be easy enough to download and insert into your custom repository. There are several tools for managing repositories. For Enterprise Linux, Cobbler, the provisioning and infrastructure management tool has repository management and mirroring. My new favorite thing for this though is a tool called Pulp, an open source project by Red Hat.  If you prefer simplicity, you can just install a web proxy and use a command line tool like createrepo to manage your yum repos.
+Don’t assume I can talk to the Internet. When it comes to configuration management tools, I find it in bad taste to write a module or cookbook intended for the community with an Internet dependency.  If you have to write one, label the dependency in large font.
+If you’re going to set up repositories, consider a collection like this list.
+Base - base EL install repo  - This is generally straight up ISO content
+Patch - repository containing patches
+EPEL - EL Extras repo mirror
+Custom - repository containing all the custom packages I need that I’ve either crafted myself or downloaded
+Purity of Purpose: Always keep your base and patch repos pure. Don’t let people just dump random packages into a Base OS collection. You’ll never know what was supposed to be there and what was added later.
+Prioritization and Specificity: If you have two versions of a package in different repos, either be specific when installing or configure a priority for each repo.
+This is where you get/put your gems. Gem is the package manager for Rubygems. You either need to connect to the internet to get all of these things or you need internal package repos/mirrors.  See this blog post by David Moulton for how easy it is to set up a rubygems repo.
+This is where your deployment artifacts, jar, war, ear files should be contained; a tool where it’s easy to retreive them programmatically. I have seen people use Nexus, Artifactory and even S3 to store artifacts. If you’re not a java shop, you may not need something this complex. My major experience is with Java shops.
+There are many ways to craft your infrastructure. Having package repositories is an advantage because they make it really obvious to everyone in your organization where to look for software and where they should put software they need.
+The important thing to keep in mind here is that, especially if you’re in the Enterprise, you aren’t designing for yourself or just one team. This will balloon out to include dev teams using your tools. In order to deploy their app, the devs will test using VMs provisioned by your infrastructure and they should be taking advantage of your beautiful repos to deposit their extra software packages.  Your team may even be administering the VM infrastructure.
+A major goal to strive for is for all VMs and servers to be provisioned the same way in all environments, desktop to production. You make this easiest and more likely to happen when you make it easy to interact with software repositories.  If it’s not easy, other teams will “figure something out” which will likely outrage you when you discover it.
+Believe me when I say that you do not want to compile Ruby from scratch every time you build a server. The more automation achievements you unlock, the easier it becomes to use ephemeral VMs.  In Dev, people should be popping up and killing VMs all the time. If it takes 10 minutes to build a server, they won’t be doing this, dev VMs will have major cruft buildup and dismay will ensue when people realize they can’t actually reproduce their dev VM.
+How do you get packages for your repos when all you have is a pile of tarballs? If you’re brilliant, write a package spec for it. If you’re like the rest of us, you use FPM.  Even if you are in a situation where you can’t have a package repo, you can at least create and store packages which will speed up installation and simplify implementation.
+FPM: Learn it, love it, live it.
+1.8.7 is EOL
+First, on the topic of existing packages, as announced in October of 2011, Ruby 1.8.7 is officially end of life and won’t even get security updates after June 2013.  Just say no to the supplied 1.8.7 packages on your Enterprise Linux(EL) and the one that comes installed with OSX. No really, never touch it. If you’re using it, start seriously considering how to move on.
+System Ruby
+Whatever else you’re doing, your servers will all want a system Ruby. It’s possible to get along without this(see omnibus in subsequent sections), but especially in dev, people will be shocked and dismayed when there’s no easily accessible Ruby.  So get you some Ruby, not from the ancient EL repos, but get the source tarball from Ruby-Lang.org.
+Why do I tell you this obvious thing? We had the brilliant idea of switching out our compile-every-time system ruby install with just using the embedded Ruby that ships with Chef client. Never do this. The trouble is that your Ruby install is not just an executable, but a name space for installing gems and related software. This is is why Chef ships in an omnibus in the first place: to avoid dependency hell and version conflicts.  The other problem with this idea is that you are still lacking a system Ruby. You either have symlink to the Ruby executable or people have to know where to look for. So install a system Ruby independent of any other software.
+Next make a Ruby RPM. RPMs are hard. Luckily Ian Meyer is watching out for us and has a defined, working spec from which to build an RPM. I’ve made this Ruby RPM for two different clients and it compiled without a hitch.
+Once you create an RPM, put it into your custom package repo so that you can yum install ruby-1.9.3 or install it via cookbook later.
+I repeat this series of steps for the Rubygems tarball, except using FPM to package it.  Then they go in my custom repo where the custom repo has a higher priority than my base repo and my recipe just has a package block to install Ruby and Rubygems. It takes about 30 seconds instead of the 5 minutes it takes to compile Ruby from scratch.
+If you use Ubuntu, well, they are cooler than EL and have Ruby-1.9.3 packages.
+An important part of toolchaining is maintaining control of the supply chain.  The way we do that is by creating space for packages and actively managing that space. It should be freely accessible to both deposit and receive software. Don’t manage things by locking people out, but by making it easy to use and providing guidelines for usage. Most people want to do the right thing. When you make the right thing easy to do, more people will do it.
+TL;DR Use package repos for all your static software
+Last weekend I wrote a blog post that started exploring standards for managing your Ruby toolchains. To review, I had a query from someone on how to cope with the dynamic nature of Ruby-based tooling and managing a Chef infrastructure. and the fact that you don’t always want to go to the internet to get stuff, it’s a pain to be compiling things on servers all the time AND to do that, you need a compiler which is regarding as a Bad ThingTM in Production.
+The question came to me via a talk I did at Chef conf and I’m going to use Chef examples, but, unless someone tells me different, I’m going to come down on the side of you can use this advice with Puppet and CFEngine and any other CM tool out there. It works without CM too, but why would you ever?
+In this blog post, I want to talk about why I am so adamant about package repositories and offer some real world examples.  I pick on Tomcat a lot here. Nothing against Tomcat. It’s something most people understand and that I have also had personal experience with it not being managed as a package and creating much distributed pain.
+I can’t shut up about package repos. Why am I so passionate about the need for all package repos all the time and to have a team actively managing and grooming them?
+As part of the decentralization of Ops teams and the rise of DevOps, we now see multiple autonomous teams simultaneously working on similar projects but not collaborating or communicating on infrastructure.  It behooves the infrastructure managers, whether that’s ops or devops or the tools team or a central collaborative group comprised of reps from all the teams, to own and groom a collection of package repositories.
+But Why? 
+With the rise of self-service, all you can eat virtual machines, development teams are expected and want to be independent from the corporate server supply chain.  Unfortunately this also decouples them from people they depend on: infrastructure and middleware experts(Yes Ops, that’s you). They may sail gayly on and do their best or trudge forward grudgingly, resenting all of the extra work they now have to do because the Enterprise wants to be “like a startup.” Either way, they’re going to move forward, and when you don’t offer them ways to easily use software, they’ll figure out ways to [cope][]; ways that will horrify you when you discover them.
+I work at a startup because Enterprise is stupid like that.
+Nope. It’s not only the Enterprise that needs to fear the chaos of unmanaged, difficult to use infrastructure. Say your whole startup is fewer than 20 people? You’re the “devops engineer” and you work with a 5 person dev team.  The dev team may or may not include you in everything.  You might not know of actions they’ve taken to [cope][] with problems you don’t even know they have. They don’t realize there could be a simple solution to their problems because they are brilliant startup devs and they will just figure it out.  Then they’ll hand you their giant shiny mud pie and you will cry because you could have saved them a bunch of work with a few well placed repos and a web proxy.
+Package repos create a beautiful garden where you static software can flourish and discourages tarball weeds from springing up in the cracks everywhere.
+If you establish a well known, central location for packages, people will know to look there first for an existing package that meets their needs. And they will ask to place packages they need there as well.
+Ex: In the situation where someone thinks
+Their correlating thought will NOT be
+but instead
+or in an even more mature organization
+Config management tools are designed to be idempotent, which means they only do things once and ensure things look the same regardless of how many times you run the the same process.  Tarballs subvert the use of configuration management primitives, requiring the use of non-idempotent execute blocks to manipulate them.  Real world example:
+Without a package repo in place, this happens:
+Or this utter travesty:
+Notice that they very carefully delete that tarball when they are done, ensuring that it will be re-downloaded 30 minutes later on the next run. They also untar the file and then move it to the install location without checking to see if anything is already there.  Again, 30 minutes later the entire process happens again despite whatever is already there.
+Now look at what happens with a package repo in place:
+You may have to customize config files and init scripts, but this is a far simpler and less error prone way to install the base software.
+In this case, Chef knows what OS you are using, what your package manager should be, repository connection details and how to install the package. Puppet does the exact same thing. So does every other config management system in the history of ever.  The less code you have to write and the less verification code you have to write, they happier you’ll be and the people who come after you will be.
+I’ve heard a lot of complaints from ops and tools folks that devs do “crazy” stuff and they are much affronted that the devs don’t seem to understand the unpublished rules of operationalizing apps and the best way to use tools, and omg did you see the travesty of a Tomcat cookbook they wrote?
+I have spent years on ops teams, tools teams and automation teams now. I have been one of those self-righteous, affronted peeps.  This behavior doesn’t scale, yo.
+One of the best messages that DevOps has for all of us is, if you don’t like the way someone’s doing something, talk to them and find out why. You’ll probably learn that there were great reasons for everything, including “I didn’t know how to do it, Chef is hard, Tomcat is hard, and I was just a Java developer until you guys started making me do all this automation stuff without telling me the rules or offering guidelines, so I copied another team’s Tomcat cookbook. I had no idea it’s crap. It installs Tomcat and that’s all I care about.”
+Indeed. That’s all they care about. If you care about more than just the install, maybe you should reach out and offer to partner with them on the parts you care about.  Don’t like the way devs are building application infrastructure? Well maybe you should do it for them. Provide them with a consistant VM build from a stable package repo and possibly infrastructure cookbooks with sane defaults and overrideable parameters. Chances are good devs don’t like recreating that crappy Tomcat wheel any more than you like them doing it. It’s likely they will be pathetically grateful because, while they are coping with the tasks they’ve been handed, they don’t really know what to do in detail and researching JVM tuning parameters is not their idea of a good time.
+Why am I telling you this story? Because I believe that a major piece of your infrastructure stability is created with package repos. Making them easy to find, use and contribute to will help smooth any number of peripheral problems you are trying to solve.  In my next post I’ll talk about practical considerations for repositories, packages and toolchains.
+I recently received an email from someone who attended my ChefConf talk and asked me to expand on a few things. As I started to answer the email, I could see it was going to turn into a dissertation, so I migrated it over into a blog post.  As I started to write the blog post, it seemed to grow into a book, so now I’ve decided to break it down into multiple posts.  In this post I’ll try to summarize the question and situational environment and cover the easiest answers first: scripting languages and RVM.
+The Question
+Given the dynamic nature of Ruby tooling and the uncertainty of internet connections, and given that I work in the Enterprise, how should I design my supporting infrastructure and should I make Ruby my default scripting language?
+The Situation
+Situated in the Enterprise, working with Red Hat/CentOS Enterprise Linux(EL).
+Concerns  
+* Rapidly changing versions of gems and software on the internet
+* A constant need to download and compile Ruby (also compilers in production)
+* The dynamic nature of downloading an RVM script from the internet on every install
+* No connection to the internet (I’m not sure if this was a concern of his, but I’m betting it’s one of yours)
+Let’s look at our major parts, shall we? In this set of posts we’ll cover 
+* Scripting Languages 
+* RVM
+* [Package Repositories]  
+* [Package Versions]   
+* [Ruby Management]     
+* [Rubygems]
+Scripting Languages
+The question was, should we go all in on Ruby as a scripting language? My answer to that is, unless everyone loves Ruby, that’s probably an unnecessary hardship to impose while also trying to adopt Chef.  Generally you find some combination of Shell, Python, Perl or Ruby on most enterprise server systems. I think you should script in the language that works best for you, where “works best” is a combination of what you’re comfortable with and what will best suit your immediate need.
+Honestly I think we’ll never move entirely away from Shell scripting and that’s ok. It’s easy to learn and suits functional tasks like cron jobs and other server-specific work. Do I think you should have a script suite in 4 different interpreted languages? Well, no. If it were me, I’d pick Shell and Ruby for my options. But there’s no reason it can’t be Shell and Python or any other combo.
+Me? I love Ruby and have an irrational dislike of Perl that stems from my early days in ops dealing with travesties of unreadable scripts. So I like Ruby first and Shell second, Python third and Perl never.  But it’s hard enough learning a new tool like Chef. Don’t impose artificial constraints on your team.
+Also, Your devs are probably already programming in Java or C or whatever. Over time most devs pick up a smattering of shell. If you force Ruby on them too it’s likely to breed resentment.
+RVM 
+While I’m not an expert on RVM and other Ruby managers, I have heard that it’s not meant to be a server tool.  I do use RVM for workstation development and I’ve used Rbenv as well. I don’t mind compiling Ruby from scratch when installing it locally although I will love it when RVM gets precompiled rubies for OSX.
+I’ve written workstation automation using Fletcher Nichol’s chef-rvm cookbook.  A frustrating problem I have run into is that RVM undergoes frequent development and at first I had people coming to me because the workstation toolchain install wouldn’t work and it was almost always because the RVM version had changed and something was now wonky in the settings or install chain. So I started pinning the RVM version to install with occasional revisits to bump the version when I could.
+If you want to look at workstation automation for OSX 10.8 try a couple of these repos:
+I have written workstation automation but I don’t maintain it these days and I’ll probably try Soloist when I get my next new Mac.
+TL;DR:
+* Use RVM on workstations not servers  
+* If you’re automating for many people over time, pin your RVM version
+Wrap Up
+To keep the blog post readable, this is all I want to discuss in this first post, but I’m about to publish Part 2 as well: a rant about package repos. I’m extremely interested in feedback on this series as I was only half joking about writing a book, though it would likely be an online doc of some kind. This type of discussion evolves too quickly to commit to paper.
+Last night we had a fun second meetup of the Twin Cities Infracoders group.  On the docket were presentations and demos for Vagrant and Sensu.  We had about 18 people show up and a lively discussion ensued on why you’d want to use something like Vagrant and implementation strategies.
+Most of us have partnered with development teams who have asked for things that are difficult to provide or unwise and one of the best use cases for Vagrant is the ability to hand someone a development environment homogenous to the team and easy to troubleshoot. It’s homogenous because everyone uses the same base OS box file and also uses the same provisioner to create the environment, whether that’s Chef, Puppet or Bash scripts or anything else. It also shortens time required to bootstrap a new team member.
+Mike Goetz and Tom Duffield gave us a great compressed Wordpress install demo on a local VM with Vagrant and Chef. Then they gave us a second demo of spinning up two ec2 instances to separate the front and back end pieces of Wordpress.
+After Vagrant, we ran through some Sensu slides and looked at some basic info about Sensu.  There were technical difficulties around the demos we were working on so demoing was minimal but discussion around why Sensu, how Sensu and when you might switch was great and we’re looking forward to a more detailed demo at next month’s meetup.
+Vagrant
+Vagrant Plugins
+Sensu
+Sean Porter’s Slides
+Wordpress Demo(this link will be available shortly)
+Next month’s meetup, hosted again at the Nerdery, will be a presentation on using Selenium for automated testing and QA as well as our enhanced Sensu Server and client nodes deployed with Vagabond on LXCs inside a Vagrant VM.  I hope we get a great turnout.
+On another note, I have been talking lately about how I want to organize a Chef hackday. After last night’s discussions around tooling and workflow, I think it might be nice to instead do a tool-agnostic Workflow Tooling hack and help day. Many of us have gotten workflows configured successfully, but depending on your experience beating on the Ruby toolchain, it can be challenging the first couple times you do it.  The Nerdery said they would probably be willing to host and I was thinking about asking CoCo Minneapolis if they had any interest in hosting.
+I’ll post up a question in the meetup group about location and date preferences to see if I get enough interest to make it a thing. I’ll also send someone to shill at the monthly DevOps meetup that I can never attend due to my work travel schedule.
+If you haven’t made it out to an Infracoder meetup yet, I hope you because we are having some great tech discussions and getting to hear about other people’s uses cases for things is fascinating. Also, the Nerdery takes super great care of us and feeds us Pizza for dinner.
+I had an interesting exchange with Adam Jacob yesterday on Twitter around devops consulting. It’s a topic I’ve discussed often with friends as we work out how to spread the devops message in our consulting adventures.  After the Twitter chat, I’m motivated to say a few words about devops consulting, not because there was an argument, but because it’s something I’ve thought about often since I started independent consulting and I think it’s important.
+ The twitterings began with me trolling Adam on a topic about which I learned my first, best lessons from him.  Two years ago, my ideas around devops were still mostly unformed when I saw him give his “What is Devops” and “The No Assholes Rule” vignettes at Velocity. These two 5 minute segments clarified several nebulous thoughts I’d been having and form the base for how I approach devops today.
+My trolling quickly transformed into an exchange as to whether devops consulting is a valid thing.  Here’s my take:
+As far as toolmakers, tool-consumers and recruiters are all concerned, devops is the new black. I get frustrated with the “slap a devops on it and they will come” attitude we see prevailing. It makes me want to never use the word “devops” to describe anything ever because of things like this:
+I already hear colleagues succumbing to the terminology “devops Tool” because it’s a phrase understood by (or at least familiar to) upper management and business users. I can even see the day when I give in and start calling things devops tools. This makes me sad.
+ Call me cynical, but this sort of devaluation discourages me and has turned me into something of a hipster goth. You know, the girl in all black with the black nail polish listening to Bauhaus and denying she’s goth because she transcends labels in her non-originality. I can make fun of this girl because I was her in high school.
+ But as I see tool companies and recruiters slapping devops across everything and large companies begging for the devops panacea, I become less and less inclined to talk about devops and the hipster goth in me is damned if she’s going to cash in on all the quick bucks of devops consulting.
+Last year I had a company try to hire me as a devops consultant, but the very idea made me shudder. It felt utterly pretentious even though they had the best of intentions and were knowledgeable about devops.  My business card says Devops Enthusiast. That’s it. I love it and I try to live it every day I walk into an office, whether it’s my home office, a client office or any other place with people in it.
+But my business card will never say Devops Consultant. Why not?
+Devops Isn’t a Deliverable - When I get done with you, you don’t have a devops. It’s possible that the things we’re working on will bring you closer to a lifestyle and culture that is devops. And that’s super.  Working at scale demands extraordinary feats of technical prowess, but it also demands empathy and trust, key components of devops culture. I expect this to be a natural byproduct of my tenure, not the thing I craft.
+Consultants Have No Moral Authority - This is the classic water and horse thing. You can hire someone to tell you how to do devops, but unless everyone is signed on and excited, it’s going to be the consultant and the person who hired the consultant drinking from the trough and a bunch of other horses standing around dehydrating.  I have no desire to earn a living doing this.
+I’m Not Qualified - I learn new things every day and I often remind myself that devops isn’t just me preaching DevOplyness, but also involves me actively empathizing with and trusting people I find difficult or frustrating to work with.  This stuff is hard, and I’m not even close to perfect. I’d rather lead by example than preach. I feel like a hypocrite telling other people how to put their house in order when I’m still cleaning my own.
+I’d Rather Be Crafting - Let’s face it. If I say Devops Consultant, that’s management consulting. As much as I’ve considered going into management because of the ignorance I see in charge of stuff, I’d rather be making things. This is a selfish thing, right? I love to CLI and hack on Ruby and play with Chef and figure out why stuff is broken, mentor newer engineers and coach devs on how to operationalize their apps. I don’t get to do that if I’m teaching senior management about devops. It’s why I like consulting. There’s always a new problem to solve.
+This was also touched on yesterday. Jeff Sussna wrote a well-articulated article for why we should just call it Continuous Delivery instead of devops.  I think Adam and I were not actually disagreeing about anything in our chat today, unless he was postulating that CD is as nebulous as devops. I don’t think it is. I think Continuous Delivery is a measurable deliverable and a valid consulting field. If done right, it results in not just a great pipeline, but also devops culture because CD should be impossible with crappy culture.
+I know some folks who are doing the devops consulting thing. They generally want to do the management consulting thing and they believe wholeheartedly in devops as cultural shift and in
+CAMS, which I think is the key to making it work, if that’s what you really want to do.
+There are also some super fantastic companies with amazing cultures; some calling it devops, others not but still living the lifestyle. I’m not panning everything calling itself devops. However, the more I see vendors and recruiters latch onto the word and commoditize it without sincerity, the less I want to actually associate with the word myself and the more grains of salt I require when I get yet another email from someone telling me about their great devops job for which I’d be a perfect fit.
+Chromatic Coffee   
+Location: Santa Clara, CA, a few miles from the Apple campus  
+Espresso: Emperor 
+Hardware: La Marzocco and heavily modded grinders of unknown origin (see picture) 
+Coffee Art: heck yeah 
+Wifi: Yes 
+Drink: Cappuccino 
+Served in: 5oz ceramic cups 
+Visited: Daily in February and March 2013
+
+I first met Chromatic Coffee when it was a franchise under another name in June 2012. For the record, it was super then too. I recently acquired a client in Santa Clara, CA and knew I would be traveling out here every week.  Strangely, Silicon Valley does NOT have a great artisan coffee shop on every corner. A lot of the area is actually office park and strip mall hell.  When I found this place last year, I drove 8 miles from the Hyatt Convention Hotel to get some decent coffee. (For the other record, all of the espresso served at the Hyatt is utterly vile).
+So I immediately thought of this location when I set up weekly trips to California. In the meantime I discovered the shop had changed its name to Chromatic Coffee but was the same crew of awesome baristas that I’d met last year.  I actually managed to find a good hotel near the shop, putting me about 5 miles from the client but worth every commuting minute, knowing I’d have decent coffee at least once a day (I work in office park hell).
+I am happy to say that breaking off on their own has only improved things over here.  In my chats with the baristas, I’ve learned that the owner is a tech obsessed uber coffee nerd. You can see this in the fact that they are their own roastery and hey, check out the grinders.  Heavily modded, the barista couldn’t remember the original brand on them, but informed me that the owner is actually working on his own equipment as well. (uber techie coffee nerds unite!).
+
+So I can’t tell you enough how much I love Chromatic. Everyone there is super nice and super knowledgeable about the coffee and will happily nerd out over coffee talk when it’s not busy.  There’s also a Hario pourover bar and they tell me they make cold brew as well, which I will be sampling next week.  In addition to all the other awesome, they hold classes on everything from pour-over technique to barista art.
+Bonus: They are not snooty coffee snobs here. You can order your drink with skim milk or to go and no one will look down their nose at your or inform you snottily that they only use whole milk from locally approved cows.
+I wish I could keep gushing, but you should really get in here and try them for yourself. Don’t be fooled by their strip mall exterior. They are beyond awesome.
+
+
+Today I ended up in a heated discussion with some team mates over deployment strategies. As is often the case with this team, myself included when I don’t stop and think, we often leap right to arguing over which tool is best before discussing the problem we want to solve. It wasn’t the first time.
+The source of this discussion was brought on while we were reviewing some chef work I’m doing with a development team.  My work was mainly to assist them in getting to functioning cookbooks that also had their app logic separate from global cookbooks. I basically copied their intent wherever it made sense while shoring up design and Chef styling. One of the things they were doing was making a call to our Artifactory server for a latest snapshot of a WAR file, downloading it into the Tomcat directory and restarting Tomcat. Works for me.
+Getting to this point in the review triggered a long, heated debate over
+I was like, geez guys, I’m just mimicking the dev team’s functionality, why are we are arguing about this? But this has been a topic of discussion often recently and, with another team announcing yesterday they were writing a homegrown tool to manage jboss, deploy ATG ears and manage config files all retrieved from Artifactory, I don’t expect the subject to die soon.
+I don’t think there’s one right answer to how you deploy your code, but I think there are many poorly thought out ones. I’m not here to necessarily make an argument for Chef as a deployment orchestrator.  While there are people deploying with Chef at scale, I am not one of them, nor have I been. My work with Chef has been mainly in development with some provisioning and so I have a lot of theories, but that’s really all.  What I do want to talk about is why I don’t like shell scripts for deployments or orchestration and what I want in a deployment system. This is the first part of at least a 2 on this topic.
+Shell Scripts are like Gremlins. You start out with one adorably cute shell script. You commented it and it does one thing really well. It’s easy to read, everyone can use it. It’s awesome! Then you accidentally spill some water on it, or feed it late one night and omgwtf is happening!?
+The Fixer: Someone else comes along and found an edge case your shell script doesn’t deal with. They add in some logic for the edge case, voila, problem solved.
+The Refiner: Eventually someone realizes the logic for the edge case is not specific enough and is causing deployments to fail sometimes, so they refine the logic.
+ The Slippery Slope: After that, someone might decide it’s a good idea to automate stopping the apache server from sending traffic during deployments and decides to do it in the same script.  Great idea! That’s such an awesome idea that everyone starts adding functionality to the tiny beautiful shell script, now no longer tiny nor beautiful.
+OMG GREMLINS!  Then you come back along and find all the extra stuff in your shell script that doesn’t belong there.  You’re horrified. You might even be feeling a little bit violated (come on, we’ve all been there at least once).  So what do you do? You pour some water on it. You break out the shell script into several functional bits. Now we have LOTS of gremlins instead of just one. Now you have a suite of scripts that are once again beautiful. But now the deployment is complex. You have a suite of bash perl ruby python scripts that also need a wiki page to describe intended flow, what to do if something doesn’t work and any edge cases that you haven’t gotten around to scripting yet.
+The Exodus: Next up: You get a call from a buddy who is dying to have you come work for his Next Big Thing startup. So you quit your job, pack your bags and move to Silicon Valley Sitcom with ne’er a backwards glance, leaving a couple of forlorn junior sysadmins desperately reading wiki pages trying to figure out what to do with your shell scripts as a new application is launched that requires a bunch of new logic for deployment. These guys do the best they can and start tacking on if statements everywhere they need to in order to make the deployments go.
+Subsistance Living: 6 months later, one of these guys leaves and the company hires 3 more guys with no understanding of the history of the deployment scripts.  Sometimes they work, sometimes they don’t, people aren’t entirely sure why and just self correct by hand at the command line until things work(phew!). Everyone is afraid to touch them because they are fragile, the code connecting them is obscure and there are similar logic blocks found in several sections, sometimes commented out, sometimes used, but you’re not really sure whether it’s necessary. The original wiki page gets updated sometimes but not often and not usually by the person maintaining the scripts but by the people using them in the middle of the night.
+And that’s why I hate shell scripts and think you should never use them for deployment scaffolding.
+True story: my first venture with Chef involved deconstructing an organically grown Kickstart post that had been originally written for Red Hat 3 and subsequently updated for RH 4, 5 and 6.  I was removing functionality from the postscript and rewriting it in Chef blocks when one of the admins came and yelled at me for omitting a block of host names from /etc/hosts and I was like, GUYS, those host names are for servers in a data center that was decommissioned  when I started here 3 years ago.
+You can tune in for the second half of this blog post, what I want in a decent deployment system, when it goes up next week on the Sysadvent blog.  Woohoo!
+Blue Ox
+Location: Chicago and 38th St, South Minneapolis, MN
+Espresso: Counter Culture 
+Hardware: Mazzer and La Marzocco
+Coffee Art: Yes
+Drink: cappuccino
+Served in: 6oz ceramic cups
+Visited: 2012 often
+
+The Blue Ox coffee shop opened up about 3 blocks from my house in 2011.  I love
+them. I love that they opened up in what I consider a marginalized area of
+Minneapolis, albeit one that people are working to revitalize. I love that
+I can walk 3 blocks to get wonderful artisan coffee. Sadly, I’m super lazy and
+often stay home and make my own substandard not-really-artisan coffee instead.
+Blue Ox always has local art on the walls. Furnished with several second hand
+dinette tables and chairs, they also have a comfy futon and you’ll often find
+the windows open and the ceiling fans running instead of a/c.
+Baristas here are always willing to talk the finer points of espresso and
+coffee with you.  They have individually brewed coffee, pour over and they’ll
+make you an AeroPress Aerobie coffee if you ask.  I’ve chatted with them and
+I know they calibrate the espresso grind and length of the pull at least every
+morning, sometimes more.
+They’ve cycled through a few different brands of coffee and have recently
+started serving Counter Culture beans. When paired with the local milk used
+here, these produce a lovely, sweet  espresso drink.
+Warning, Blue Ox only serves whole milk.  There is no skim or 2% here. They
+probably have soy, although I haven’t asked.  They have locally baked pastries
+but no hot food. Today when I came in, they were also offering chips and hummus
+or salsa.
+When you combine the laid back atmosphere and super yummy coffee combined with
+proximity to my house, Blue Ox pretty much wins my “favorite coffee shop in
+Minneapolis” award.  That’s not to say there aren’t other places just as good
+and I’ll be getting to those in future posts.
+Irving Farm Coffee Roasters
+Location: New York, 14th St & 7th Ave, Uptownish
+Espresso: Irving Farms
+Machines: La Marzocco & Doge
+Coffee Art: yes
+WiFi: Unknown
+Served in: 8oz ceramic cup
+Drink: skim cap
+Visited: 9/2/12
+
+Verdict: Noms. Seems like a lot of places in NYC are serving Intelligentsia
+coffee.  While I don’t object necessarily, it’s nice to see a coffee shop using
+locally roasted or even better, roasting its own.  My drink was mild and
+reminded me a bit of Stumptown with it’s citric tinge. They heated the milk
+a bit more than some places but it was still drinkable and I like my milk with
+a smidge of heat so the drink doesn’t cool off too soon. I’m guessing they heat
+to 145-150.
+There are four small tables and a wall bench at this location, so the lounge
+factor isn’t high.  However, the was an elderly man enjoying his newspaper
+when I got here and so I’m guessing foot traffic isn’t too obnoxious.
+The shop is small and unassuming from the outside and I wouldn’t have noticed
+except I got off the subway there and was looking for friends.
+Fyi, no public bathroom
+Final Word: Noms.
+Financier Coffee
+Location: New York, Cedar & William, Downtown, Financial District
+Espresso: Financier (roasted in Park Slope, Brooklyn)
+Machine: La Marzocco & Mazzer
+Coffee Art: No
+WiFi: kind of (“It’s not working right now”) 
+Served in: 8oz ceramic cups after I asked twice for “here”
+Drink: skim cappuccino
+Visited: 9/2/2012
+
+This drink had the potential to taste good.  Unfortunately the
+barista had no concept of micro foam or craftsmanship. The taste is a little harsh but I can see
+that it could taste awesome if prepared correctly.
+Financier prepares and roasts their own beans and so I may come back again and
+check as it has the advantage of being close to where I’m staying and the
+subway stations are totally horked with construction this weekend. (n.b.
+I didn’t. I walked to Kaffe 1668 in search of a sure thing).
+The pasty case looks amazing but I won’t be able to report on that. The store
+has long bar seating at the window plus some table in the back. While
+I prefer the dark hipster coffee shops, this is still ok.  The music is kind
+of pop/r&b dreadful. There’s no public bathroom either btw.
+Also, beware, a small cappuccino is really only one shot. They divide the
+shots. When I saw that, I asked for the second. This annoyed me.
+Pros: cap tastes good despite mangled prep, bright and airy if you like that,
+PASTRIES!
+Cons: Inexperienced baristas, Split shots (who are you, Starbucks?), crappy wifi
+Final word: Beats Starbucks and the nearby Blue Spoon
+
+tl;dr: As a sysadmin, whenever someone tweets something snarky about sysadmins,
+I feel a little put down. As a result, I try to think twice about snarky stuff
+I might tweet about devs or other teams. And so, I think sysadmins posting snarky captioned
+images about devs and then adding the devops hashtag is mean and
+inappropriate.
+I’ve seen this captioned image circulating all day with the devops hashtag on Twitter. For the
+record, I don’t think this picture is funny. In the right context, it might
+be funny. If it were, say, a slide in a deck pointing to how things are or
+used to be without devops, I’d laugh. My issue is seeing tweeted with the devops hashtag
+and having it billed as funny.
+Now I love me some snark. But I think it’s too easy to be
+snarky and mean on Twitter,  because there isn’t a lot of consequence and we
+tend to live within a circle of our peers who often think alike.  The snark
+factor often goes up around conference time when many of us are congregating
+in once place and competing to sound smart and funny in 140 characters or
+less. I’ve commented before that I think people are too often mean on Twitter
+in the name of being witty or complaining about speakers without ever
+thinking about what that speaker might feel if he sees that tweet later.
+So why does this caption bother me? I have a long history of unfiltered snark
+and smart ass remarks. Consulting since 2006 taught me a lot about active
+filtering and my introduction to DevOps caused me to implement additional filtering for the
+sake of my emotional attachment to an ideal.
+As someone who’s signed on as a big fan of DevOps culture, I spend a lot of
+patrolling my cynicism and preventing disparaging remarks from escaping the
+filter. I think when you espouse certain ideals, you’re responsible all the
+time for representing them.
+I sometimes see cynical, catty remarks about sysadmins or ops from people who
+can only have come from a long life of development and, even though I haven’t
+technically done ops in 7 years, I’ve been sysadminly all my long life and
+I am affronted every time by those remarks. Recently I heard a professional dev
+say to someone in a beginners programming workshop, “If you want
+to understand/master the install of the programming tools, you’re probably
+better off as a sysadmin not a programmer.” The guy who said is a super nice
+guy, but that remark still got a side-eye from me.
+If DevOps is a movement that promotes collaboration, communication, respect
+and friendship between functional teams, I don’t think a sincere proponent
+would post this kind of caption. While it makes some folks feel validated,
+it’s just fueling the fire that walls people off from each other.  I don’t
+think we can all get along when folks are throwing up cynical remarks
+perpetuating stereotypes of bad development practices.
+While there are many successful DevOps teams out there, there are far more
+silos in transition or bitter adversaries who haven’t yet heard of DevOps.
+I can’t believe that only some developers or sysadmins are capable of transcending the usual barriers;
+I have to believe that any and all are able to transcend them or what’s the
+point?   But it’s the more entrenched and cynical cases that will be the most
+difficult to move ideologically and emotionally and I feel that humor like
+this can only alienate.
+I don’t want to pick on anyone specifically because I see this kind of humor
+from all disciplines all the time and it makes me increasingly uncomfortable each
+time. If we’re actually going to all be in this together, we need to jump in
+with both feet. So I thought I would speak up for a moment and say something.
+If a thing can only be funny by being rude about someone else, maybe it’s not
+actually funny at all.
+La Colombe
+Location: New York, NoHo@400 Lafayette
+Espresso: La Colombe
+Machines: La Marzocco & Mazzer
+Coffee Art: yes
+Wifi: unknown
+Served in: 8oz ceramic 
+Drink: skim cap
+Visited: 9/2/12
+This was a quick stop while out shopping with a friend. There’s ample seating
+and it’s a light, airy space. My coffee was ok, although it was a smidge
+bitter. I’d probably have to try again to see how I liked the coffee.
+However, it’s a great place, good for meeting a friend or stopping in and
+they take their coffee production pretty seriously. I didn’t actually see
+a menu anywhere although I wasn’t looking.
+They did have an adorable water “fountain” that offered room temperature,
+cold or carbonated water and they’ll offer you a water cup no problem.  The
+staff is professional and fast. This coffee shop had the most starbucksian
+feel to it of all the shops I’ve been too, but I don’t really mean that in
+a derogatory way. I just mean that they turned out product quickly. The
+product they turned out was definitely far superior to anything Starbucks
+will serve you. I still prefer low-lit, shabby, hipster joints, but I’d have
+no problem coming back here.
+Pros: Fast, good coffee
+Cons: None really
+Machiatto
+Location: near Times Square
+Espresso: Macchiatto 44 roasted by Seattle-based Fonte Micro Roasters
+Hardware: Fonte branded
+Coffee Art: No
+WiFi: unknown
+Served in: 12oz cardboard cups
+Drink: skim cappuccino
+Visited: 8/29/2012
+Sorry, no picture. This was on the run with friends.
+Macchiato is a local two-shop chain in NY. It’s a restaurant as well as coffee
+bar and appears to have a brisk lunch crowd. Seating is small tables and
+chairs. This was a spontaneous stop after having lunch with friends near Times
+Square. We stood in a long but efficient line. I was alarmed at the amount of
+milk they poured in my 12oz drink and thought it would taste more like milk
+than coffee.  While I would have preferred less milk, the taste was still
+sweet, I could still taste coffee and the micro foam was lovely.  The
+temperature of the drink was fine without a sleeve and the taste was nicely
+sweet, leading me to suspect they probably use local and/or premium milk.
+I prefer my caps with less milk, but if you aren’t picky about lattes vs caps,
+you’ll probably like it. If I’d actually ordered a macchiato, it probably would
+have been lovely.
+Pros: Fast service, lovely taste, great micro foam
+Cons: Busy and lacking in attention to detail.
+Final word: I would go here if I were near but wouldn’t go out of my way to get
+some and I might look around for something different if I were planning ahead.
+I think 12oz cups are way too big for most drinks, but it did taste good, so
+YMMV.  It makes me interested in checking out Fonte Coffee Roasters in Seattle!
+Blue Spoon
+Location: New York, Downtown (Williams and Platt)
+Espresso: Intelligentsia
+Hardware: La Marzocco + Mazzer
+Coffee Art: No
+WiFi: yes, from the park across the street (NY DTA), sketchy
+Served In: 8oz cardboard
+Drink: skim cappuccino
+Visited: 8/31/2012
+
+This is a small shop at corner of William and Platt in the Financial
+District.  The coffee is too hot leading me to guess they overcook the milk. I ate
+half a bagel waiting for it to cool off. If I had been walking, I would have
+wanted a sleeve, which I generally never need with artisan coffee joints. It
+was interesting that the beans were Intelligentsia as the taste seemed to
+have a lot more licorice or citrus than the other locations serving the same
+beans. Reminded me a bit of Stumptown when it’s pulled too long.
+Other, non-coffee specific: It’s hot in here. It’s a very small space and
+I think there’s some a/c near the counter, but I’m about 8 feet away at
+a window bar and sweating while drinking my coffee. Also, despite ordering
+“for here,” I received cups with lids on them and a bagel toasted but wrapped
+up in wax paper and a lunch bag.
+Pros: They’re 2 blocks from where I’m staying and bagel noms.
+Cons: scalded milk, bitter, citric taste, location heat.
+Followup: It was 90 degrees Friday afternoon, so I opted to walk back here
+despite the meh experience of the morning.  I got the same kind of drink that
+I think had even more milk than my morning cups. Very disappointing
+experience for a shop that actually has a La Marzocco in residence.
+Final word: Despite the La Marzocco, this shop is not serving artisan coffee
+and I don’t recommend it. It beats Starbucks, but just barely. Intelligentsia
+should investigate the crimes being committed against their beans in this location.
+Kaffe 1668
+Location: New York, Tribeca a few blocks from the GZ Memorial
+Espresso: Intelligentsia 
+Hardware: Synesso & Mazzer
+Coffee Art: Yes
+WiFi: yes
+Drink: skim cappuccino
+Served in: 6oz ceramic cups
+Visited: 2012 Aug30, Sep1 & 3
+  
+ This coffee shop was recommended to me by a casual Facebook friend who moved to NYC
+ from Minneapolis and used to be a barista himself.
+ Kaffe 1668 is a lovely little shop with dark wood tables and benches. It’s
+ quite dim inside and I really like it. They serve espresso drinks and
+ individually brewed coffee.  My cappuccinos were low temperature and actually
+ cooled rather quickly as I was lollygagging.  However, they were very good and
+ I enjoyed every drop. In a world where too many drinks are made with scalded
+ milk, I’m ok with the consequences of low temps. The shop has cold pastries.
+ I had a scone on my first visit and a breakfast sandwich on a baguette on the
+ next. The scone was good, the baguette was chewy(I know nothing about french
+breads so take that fwiw).
+ Your wait for coffee can be significant. The line moved a bit slow and it
+ took a while for my drinks to be made.  However, it’s worth it as the
+ baristas are perfectionists and won’t serve a substandard drink. On my first
+ visit I was informed that my second cup was late because they were remaking
+ it.   I understand they recalibrate espresso pulls throughout the day here
+ which is awesome.
+ One thing worth mentioning is that it seems to be a stroller destination on
+ Saturday mornings. It’s still worth it for good coffee which seems to be
+ missing in most of Downtown, but cranky babies can be a bit tough on the ears
+ in the early morning.
+ Bonus: They’re open on Labor Day. Guess where I’m going when I get up
+ tomorrow?
+ 
+I’m embarking on something I’ve wanted to do for a long time. Coffee reviews
+for traveling nerds. I don’t travel extensively but I do go places and my trip
+logistics are often driven by my need for acceptable espresso drinks. Over the
+years I’ve raised the bar several times for what I want in a coffee shop. I used to just get excited that
+I could find Starbucks on road trips through Nebraska and Oklahoma or had
+a Starbucks across the street from my hotel.
+These days I look a little harder for local shops serving artisan espresso
+drinks. I have been know to pore over Google Maps and search the internet for
+hours before choosing a hotel for a trip. For road trips I look ahead of time
+at where we might be able to stop for coffee, mostly because I’m afraid we’ll
+miss the only coffee shop within 300 miles (this can happen in Texas!).
+I’m not a top of the line coffee snob. I don’t attend cuppings and I’m not sure
+I could tell the diff between espresso shots. To be honest, I’m not too fond of
+straight espresso. I prefer my drinks to be about cappuccino strength. I don’t
+roast my own beans although I’ve met those who have. I can’t make very good
+coffee art, although I enjoy trying.
+I drink most of my espresso at home, which is part of what’s raised the
+bar when I look for coffee shops. If you spend a lot of time pursuing a great
+shot, you start noticing when you’re served bitter espresso or scalded milk. I went from religiously drinking
+Caribou cappuccinos to actively loathing them over a period of a few years.
+Many years ago I had a Krups pot boiler espresso machine and a blade grinder.
+I used that for years and considered it fine. Then I started thinking I wanted
+a nicer espresso maker and started reading.  That’s when I learned about
+grinders. Instead of buying a new espresso machine, I ended up buying a Mazzer
+Mini. This was before the Euro and when things were less expensive. I believe
+it cost me around $350 at the time. That was all the money I could afford to
+spend for a long time, so I had a super nice grinder and a crappy pot boiler
+espresso machine.
+Eventually my boyfriend and I each got Starbucks Barista machines on sale for
+$200 and they were great for their price point until they died. At that point,
+I was making more money and decided I wanted something nicer. I opted for
+a Rancilio Silivia
+which I later modded with a PID that allows you to see and
+regulate the brewing temperature for espresso.  This is where I’m at today:
+Mazzer Mini, Rancilio Sivia. I tend to use the same espresso beans as
+calibrating the grinder for different kinds requires wasting about half a pound
+and too much time.  So I stick with a local provider: Peace Coffee
+espresso beans.
+What do I consider an artisan shop? There are several optional
+components but a few obvious things:
+Less mandatory, I like it when the barista can talk about calibration and taste
+notes with their espresso(s). Another thing you’ll find in serious artisan
+shops is milk snobbery.  When the Angry Catfish opened in Minneapolis, they did
+several taste tests before settling on a local milk provider. They also only
+serve whole milk, no arguments, although they’ll also use soy.
+So anyway, I’ve started writing up my NYC coffee shop experiences and will post
+a separate snippet for each shop. I’ll also create entries for places like that
+awesome shop we found in Denton, TX and other recent trips to Baltimore,
+Seattle and Santa Clara. I know this is
+a technical blog, but coffee is so much a part of our lifestyles that it seems
+a natural add-on. I hope you enjoy it and if you have suggestions for places
+for me to visit, please let me know.
+I just want to take a moment to point you at an epic new Chef cookbook undertaking. John Larsen has been working on a cookbook to configure a full ATG stack with JBoss and has finished a first version. This is something I always wanted to work on but never got around to, and so I’m being extra appreciative of someone who did take the time to get it working.
+Anyone who works on ATG projects knows that installing and configuring the
+first instances of ATG is hella complex and nearly impossible to do even with
+documentation.  With all the options, variables and components, it mostly takes repetition and mistakes to get an initial ATG install correct.
+That’s not what this cookbook is about. You still have to know how to get ATG
+right the first time or have someone on your team who does. This cookbook is
+not going to make you an ATG expert, but it will relieve the tedium of
+managing your configurations. It will also speed up adding a new instance. The more epic your configs, the more awesome this
+cookbook will be for you.
+The cookbook contains a modified version of Bryan Berry’s JBoss Cookbook, specialized for ATG deployment and does the following cool things:
+The ATG cookbook is well thought out, fairly large and handles complex scenarios. If you are in
+the position of having to manage or build an ATG environment, I definitely
+encourage you to check it out.  With something like this, it would even be
+possible to stealth manage your configs with Chef-solo early on if you’re looking to prove out
+configuration management for ATG-JBoss. In my experience, there’s something about
+shops running this combo that makes them, in general, resistant to
+configuration management. Possibly it’s the breakneck speed at which I see them
+running (often with scissors).
+This post has been percolating in my brain for a long time. I mean like, long. Ever since I read a snippet from last year’s Chef Summit discussing best practices regarding attributes, I’ve wanted to write something. But what I’ve got to say keeps changing.
+This post assumes some basic familiarity with Chef and node attributes. I assume that most people are going to be bored with the subject matter unless you care about nerdy details or why strings are the official preferred notation. You can get the short version on the Chef Wiki Cookbook Attributes page. I have a longer discussion here that focuses on my discovery process and evolution of thought.
+When I first started working with Chef, the publicly available cookbooks and wiki documentation were written in different styles.
+I usually refer to this last as “dot notation,” mostly because I had no idea what else to call it at first. I still call it that as it’s an intuitive reference for someone who doesn’t know much Ruby. I read up on method_missing in prep for this blog post, but it was a new term and concept to me.
+Getting back to it, I lurved my dot notation. It was easy to type. It was easy to read. It was harder to make typos. I am the queen of typos. Anything that helps me make fewer is my favorite friend. Then Chef Summit happened and recaps happened and I was like:
+
+At first I was outraged that they were oppressing my dot notation and I was terrified they would deprecate it, which would make me sad. For a long time after that, I was just mad and still loved my dot notation and resolved to just keep using it anyway. This was the first time I had the urge to blog about it. I was planning to tell everyone to piss off. I loved my dot notation and I didn’t want it taken away.
+
+I mean, yeah, dot notation didn’t always work and I probably never understood why. I was like this when I first learned chef:
+
+Today I was having a conversation about consulting and how important it is to
+not be emotionally attached to your solutions. As a consultant, you exist to be
+an enabler. You help others succeed with tasks that, without your expertise, they
+might fail instead.  As consultants, our value comes from a long history of
+observing and participating in spectacular failures and fantastic
+successes. We know what works and what doesn’t work and we can articulate the
+reasons why.  But our value can be compromised if we can’t interact effectively
+with our clients. This means checking your emotions and inner schadenfreude at
+the door and working with clients to discover a solution that is practical for
+their environment.
+Back in the day, I worked on a silo’d web operations team at a big retail
+company. We knew how we liked things done and, although we might argue amongst
+ourselves, we presented a united bullying front to the dev teams.  For example,
+  we didn’t allow them to deploy apps into production when they came with the
+  caveat of “you have to restart the app every night.” We drank developer tears
+  with breakfast, and we liked it that way.
+  Guess what? Consultants don’t have that luxury. I might also argue that
+  internal operations teams no longer have that luxury, but that’s a blog for
+  another day.
+  
+  In that job, I saw every kind of connection leak, OOM and spectacular
+  cascading infrastructure disaster you can think of and I participated in
+  resolving several.  Eventually I moved on to consulting for a large company
+  where I designed and deployed infrastructure for large web-based
+  applications. My previous experience was not just invaluable for designing
+  infrastructure in diverse environments, It also enabled me to advise client
+  development teams on how to write robust applications and assist them in
+  tracking down performance problems during the development process.  I was
+  full of ideas! They were all brilliant! Wait, what!? Where is everyone going?
+  How can you not like my ideas?
+  As a new consultant, I had excellent technical knowledge, some decent
+  communication skills, and a host of opinions.  I knew the right way to get
+  things done and people should listen to me because I was the consultant.
+  But technical knowledge and opinions can only take you so far. Some people
+  aren’t suited to life with clients. Often there is no one to shield you from
+  difficult people they way your manager would in a normal job. You need to
+  work with all types of personalities, while maintaining a calm demeanor. You
+  need to be able to not take things personally. You must be capable of
+  articulating the why’s behind your ideas and speak objectively about ideas
+  from the client, even if you think it’s the worst idea since Greedo shooting
+  first.
+  You can’t say things like, “That’s the dumbest thing I’ve ever heard,” or
+  “Why in god’s name would you ever do that?”  A favorite that I had to give up
+  was, “Why do you want to make me cry?”
+   A concept that challenged me is that there is no absolute right or wrong way
+  to design something. The corollary to that is you will always disagree with at least
+  one thing the client wants to do. Sometimes you will disagree with many.
+  Sometimes they will disagree with your solutions and expect you to implement
+  what they want, not what you want.
+  Well, WTF? You think to yourself, how am I supposed to do that? Newsflash:
+  You need to figure it out because that’s why you get paid the big bucks. As
+  an independent consultant now, I have some leeway to do my due diligence and
+  decline projects that look risky or are implementing tech stacks of which
+  I don’t approve. As an employee for a consulting company, I went where they
+  pointed me and I liked it. And I figured it out, because they paid me
+  a boatload of money to use my brain.
+  Something you will hear often as a consultant: “That’s a great idea, but
+  we’re not going to it.” A client once decided to implement mission critical
+  queuing on WebSphere Application Server’s internal message bus. I could and
+  did explain that this solution was not robust until I was blue in the face,
+  but the fact is, WebSphere MQ software is expensive and open source wasn’t an
+  option(because). Retail order fulfillment queuing was implemented where
+  they wanted it and I spent my days and nights reading up on how to ensure as
+  little data loss (orders, right?!) as possible if the unclustered,
+  non-redundant server went down. As an aside, I should note that this client
+  has since gone out of business.
+  You can’t be emotionally attached to your ideas. I know you think you have
+  the one true path to success.  You don’t. Regardless of how smart you are,
+  the customer knows their systems better and they know their politics better.
+  They know what can be accomplished.  Get used to having your ideas shot down
+  and don’t let it upset you. Don’t hang on to them.  You need to get over it
+  and move on. If you’re still hanging on to today’s disagreements tomorrow,
+  you won’t be able to think clearly tomorrow about new technical challenges.
+  Sometimes you’ll encounter strong opposing opinions. If you’re an IT
+  consultant, it’s guaranteed. Remember, 95% of battles do not need to be
+  fought. Just because you don’t approve of a naming convention is no reason to
+  argue, especially if another engineer is in love with it.  You might
+  implement applications that need nightly rolling restarts, even if you could
+  prove they don’t need it, just because management has been burned in the
+  past. Don’t fight it. Nightly restarts aren’t the end of the world.  You
+  might meet a team who wants to migrate all of their bash scripts verbatim
+  into configuration management. This would be a hard one for me to let go, and
+  I might try to convince people not to do it, but I would concede in the end,
+  because refactoring exists.
+  Save up your argues for when it matters. Eventually you will come upon
+  something you absolutely won’t want to compromise. If you haven’t been
+  arguing about everything up to this point, it’s likely people will actually
+  listen when you bring it up.
+  Your job isn’t to say no.  It’s to say yes.  If your first inclination is to
+  dismiss an idea or say no, stop and think about why. Do you have valid
+  concerns? What is a valid concern? A valid concern might be a high
+  availability requirement with only one database server in the plan.  That’s
+  a problem. But you still don’t get to say no. That’s not your job.  Instead
+  you should point out the very obvious risk involved in zero redundancy.
+  Several years ago, I was presented with a client’s server plan that I knew
+  would never survive the first engagement. In this case, we knew they were
+  trying to save as much money as possible, so the consulting team got together
+  in a room and came up with a perfect world scenario and then two less
+  expensive alternatives that allowed for some robustness while saving on
+  hardware expenses. I then power pointed the entire thing and presented to
+  senior management. I had been consulting for all of 3 months at the time and
+  was petrified but we won them over to one of our solutions in the end.
+  Are you on an ops team? Do you work with development teams to get apps into
+  production? How about a monitoring team? Do you work with devs to create
+  coherent actionable alerts? Then you are a consultant. Developers care about
+  one thing: writing code. Some developers do care about more and have the
+  background to be interested in more, but in general, especially in big
+  companies or outsourced development, all devs care about is writing code.
+  They don’t know how anything else works. It doesn’t make them dumb, it makes
+  them part of a world of which you only see a part.
+  This makes you their enabler and a consultant. You have knowledge critical to
+  their success. It’s not just your job to provide them with an app container
+  and now buzz off.  You’re their lifeline to the rest of the infrastructure.
+  Telling them “no” or ridiculing an idea will only make them angry and
+  determined to circumvent all the sane safeguards you’ve put into place for
+  everyone’s good.
+  Instead of treating development teams like they know nothing, take a moment
+  to find out why they want to do what they’re doing.  Many times you’ll find
+  that they’ve actually just spent two solid days trying to solve a prickly
+  problem and this is the only working viable option they’ve found. Maybe your
+  perspective will help you advise them on a better way, or they could be right
+  and you could be stuck with something suboptimal. At this point, instead of
+  being grumpy about it, start figuring out ways to limit the damage or make it
+  more robust and work with your dev instead of against him.  Full time
+  employees, I’m talking to you.
+  Consulting isn’t for everyone. If you can’t learn to take deep breaths and
+  count to ten, it might not be for you. I still make mistakes and have often
+  been grateful for working remote where I can wear my rage face in private.
+  In the end, you have to be able to let it all roll over you. This isn’t your
+  infrastructure and sometimes compromises must be made.
+  For me, consulting is emotionally easier in some ways because I can accept
+  decisions with which I don’t necessarily agree, knowing that I won’t be
+  around to see the heartache in a year. All I can do is my best with whatever
+  is under my control. And my best is impressive. I am a master tweaker and
+  I document the hell out of ALL THE THINGS.  But I often see sacrifices of
+  stability for expediency and it does hurt me.  I’ve just learned to not let
+  it hurt too much. The great thing about consulting is, if this project
+  didn’t work out exactly the way you wished, the next one is right around the
+  corner, waiting for you bring it all your awesomeness.
+This is partially a post for posterity because I can never remember the format of this when I want it and I have to search all over the Internets for it.  And for some reason, it’s really hard to find with keywords.  Possibly my google-fu sucks, but I actually think it’s a java developer conspiracy.
+The first time I found this jvm arg, it was by accident.  I was reading a page of comprehensive JVM args.  No it wasn’t for fun, although I was enjoying it.  I was on a gig to help a client get rid of 20 second garbage collections that were crashing their site.  So I was reading through the page just to see what might be useful and I found this:
+-XX:MaxJavaStackTraceDepth=<num>
+It was love at first sight.  See, I know developers lurve their stack traces and exceptions.  Truly.  But I’ve met some truly horrendous apps.  You know the kind.  They throw 500 line stack traces every time someone types in a bad password. Or you have an overrun team that, once an app is in production, they don’t have time to tune the app and so you are stuck with 2000 lines of stack trace for every exception, even though it only takes < 10 to figure out where to look for trouble.
+After I found this and used it, I had bookmarked the page of wonderful jvm options, but it was dead the next time I went there. So I ended up searching the internet for it later and found that my googling led me all over.  I found a stackoverflow discussion where a harried admin was asking about it and a herd of VERY ANGRY developers jumped all over him saying things like
+“How dare you truncate our wonderful stack traces!”, and
+“An exception is called that because it’s exceptional. There’s a reason for it and you shouldn’t truncate it!” 
+Oh they were like an angry mob.
+But I have to tell you, this arg is an admin’s best friend if you have apps in your care that can’t be bothered with proper tuning on the dev side.  Often this was because a client had a contract dev team come in, deliver an app and then leave.  There was no one to fix it.
+There’s no shame in cleaning up your log files so they are readable.  It’s tough to actually dig into a problem if you have thousands of lines of “benign” errors filling your world.  This option allows you to limit the damage done by excessive logging while still seeing that an exception is being generated. Of course, with all the wonderful logging packages and tools with filters out there today, this sort of thing is less important if you are filtering, but there are lots of admins out there with nothing but the CLI, syslog and vi even today. This post is dedicated to them.
+ 
+A friend challenged me tonight to write a brilliant blog post on tuning a technology about which I know nothing. Actually I don’t think you can really do that. I don’t think you can write a brilliant blog post unless you’ve participated in some kind of failure/stress activity with a product.  
+
+
+
+
+ 
+
+And it’s written in Ruby. This is kind of dorky of me, but I still get a little thrill whenever I read source code and know what’s going. I looked at some of the examples and thought, OH HEY, I see what you did there! Not that I’m any kind of a genius. But it’s fun to realize I can read it.
+
+
+
+Then I remembered! o craps! I’m supposed to be thinking about in memory database optimization for this queuing stuff, NOT reading about the queuing!  Unfortunately, it’s now late and I have to get up early tomorrow, so I guess I lose the alien tuning challenge. But I can leave you with common sense and thoughts based on what I see in the redis.conf.
+
+
+Don’t be stupid. 
+Disk I/O and resource contention
+Connections
+     If the latter, you will eventually run out of file descriptors or allowed connections on the data store side unless the data store is also smart.
+Redis (did I mention I know nothing about Redis? It’s an in-memory data store, right?) I read the redis.conf and skimmed the Virtual Memory page.
+That’s all I got. You should verify anything you read here against your own requirements and get a second opinion.  Every situation is unique. All of these relate to production environments and could be specific to a low latency goal. Memory conservation and data criticality may be conflicting priorities or require compromise. 
+I have a couple of half-written blog posts started this weekend.   Real wordy things about scrummifying your infrastructure and my  experience with it.  I’ll probably get to that in a few days but I  needed to vent about my weekend of yak shaving first.
+Moral of my story: The story you’re about to read is not the worst yak shave ever, and the problem is not a hard problem.  It’s all in a day’s work for any halfway decent sysadmin.  What we’re seeing here is a small problem exacerbated by a combination of technical debt and inadequate tooling.
+Technical debt is a choice and can happen to anyone.  Here the client allowed their configuration management to run away from them.  They haven’t been maintaining their Puppet nodes and so don’t have a good list of what servers they are managing.  They also let some config files slip through unmanaged.  I generally don’t point fingers about it as there’s usually a sane tradeoff involved, but the first issue makes fixing the second one harder.
+However, inadequate tooling does frustrate me.  They’ve gone to the trouble of automating with Puppet and managing application configs with subversion and scripting, but do not seem to have considered holistic server management. The only way to perform administrative tasks is by hand on each server or with Puppet. This seems a rather gaping hole in long term planning.  100 servers is long past what I consider manageable by hand.  But you read the story and decide for yourself.
+SituationAn org uses Puppet. The org has files unmanaged by Puppet that need to be gathered, analyzed and brought under Puppet control. I expected this to take a couple of hours.
+What made it challenging: Actual list of servers, uncertain. Generated from Puppet but unverified.
+
+
+
+What I have:My user ID.  Sudo on any server I can log into. Passwordless SSH works even if it’s considered insecure.  (really?)SSHPassSSHSudoRuby 1.8.5 installed from RPM
+With  the thought of using sshsudo, I wrote a ruby script that runs on  the client node, checks for file existence, copies the files to a temp  folder, makes them available for scp and even tries to scp them back to  the admin server.  The script should be runnable via sshsudo/sshpass.   BUT…
+
+
+
+
+
+
+
+Assembled a servers.good list based on the tcp testing.
+
+
+
+
+I also spent some time making a temporary keyset for passwordless ssh but that turned out to be no real diff from using sshpass. But messing around with moving it to the servers highlighted another issue - I could only log into about 10 of 100.  Lovely.
+OMG.   I need an orchestration tool or something, STAT.  I should probably go  script this, but I will probably never do anything similar for this client again  unless they ask me to implement an orchestration tool for them. 
+All of this work, just to get the files to me so I can work work with them. How do people live like this???
+****Lesson Learned: ask more questions when accepting work, even when it’s ad hoc, tiny project work for someone I know.  I assumed they would have management tooling.  After all, they were smart enough to use configuration management.
+I have a few clients that I keep in touch with and take on small projects from time to time.  This has been a strange week.  I’m technically full time on a project at the moment and I haven’t gotten any calls for new work in a couple of months.  It’s been quiet.  Then all of the sudden Wednesday I had 3 different people contact me about work. 
+One call was actually for some awesome Chef work at a place I’ve been before that I’d love to go back to.  It really pained me to tell them that I thought they had in-house resources of which they weren’t aware and that these resources would be more than sufficient to Chef their project without my help. Sadface Sascha.
+Another call was from someone I do work for from time to time.  Their projects source my “Puppet for Chef” series, if 2 blog posts can be called a series.  In my head I have a 3rd one on templates but haven’t gotten around to it yet. This 3wk run may source some if I’m lucky. I agreed to do some ad hoc sysadmin work for these guys because they’re in a swivet, getting ready for a PCI audit in 3 weeks.
+The job: There are about 150 Centos 5 servers. Caveat: some of the servers on the list may be retired already.  Examine all of the configuration files for ConfigServer Firewall, bring them under Puppet control. Individual node config sets are ok (ugh).  All servers are running a puppet client.  I don’t know if it’s the same client.  The master was at 2.7.9 last I checked, I think.
+
+I actually spent a chunk of time working on my Chef thing which was an exercise in frustration.  It’s for a Windows Ohai plugin and the actual ruby work was a piece of cake. Testing has made me crazy though.  Windows servers don’t fire up as fast as Linux for one and they are a huge pain in the ass to interact with.  On my todo list is an SSH server for Windows cookbook, unless my ultimate wish of hoping that all Windows servers DIAF happens prior to that.  The ssh cookbook is half done, like so many things.
+I also am not sure I understand the testing strategy.  I didn’t write any new code so I shouldn’t need to author any tests (relief).  But it turns out I can’t seen any windows testing happening in the run, or at least, I think that’s what’s not happening.  It ran happily on my Mac and then I thought maybe I should run the test on the Windows box too to see if the output was different.  It was different.  But I think that’s because there’s no Windows plugin tests in there?  Wondering if I missed them?  I was planning to email the chef-dev list tomorrow to see if I can get some love.  Unfortunately the time I have to work on pet projects is the weekends and the IRC channels were like graveyards this weekend.
+
+Now I guess it’s time to play with Puppet!
+
+ 
+I enjoy independent consulting.  For that matter, I enjoyed consulting for a consulting company.  I’ve been doing it in one form or another since 2006.  I love the variety and the challenge that comes from never knowing wtf will be thrown at me on any given day or project.  Some days it’s terrifying and some days I want to slap people around, but I won’t deny that I like it.
+
+
+
+
+
+
+
+
+
+[[posterous-content:tDmkxmhdJkvcIbHmytmJ]]In the beginning, there was no Apple…I have an uneven history of geekiness.  Most of my geek comes from my dad.  When I was little, sometimes my parents would let me sit up late on the weekends and play Dungeons and Dragons with them and their friends.  My dad was a bona fide war gamer.  He even played them by mail, with maps hanging up on the wall, using sticky putty to hang counters on them.  We didn’t have a lot of money, but I remember pong and the first computer I played on was a TRS80.  I played Zork, a little.  My dad took me to wargame conventions sometimes. There were no apple products in the house.
+Still no Apple… Left to my own devices, I was mostly just a bookworm and music junkie.  I knew computers because they were always around at home, but I never programmed for fun.  I made money in college tutoring computer subjects and took a few “computer classes,” because that was the only way to get an email address at my tiny college.  But I didn’t take them seriously.  I was a Medieval Lit major and only interested in computers for email, browsing and word processing. I used a unix terminal long before I mastered DOS or even saw an apple up close.
+
+Isn’t Apple going to die a horrible corporate death?What I’m trying to say is, I never even saw a Commodore or an Apple PC until I was an adult.  I never had any reason for interest in Apple products.  For years to me they were just a company about to go broke.  All my experience was Microsoft-based.  Then the internet boom happened and I left the Lit studies behind. 
+Oh look, an iP…. I never wanted a Mac. I eventually bought a 4th gen iPod and really liked it. I’d never really clicked with any mobile music devices.  But I loved the iPod and used it extensively for running.
+
+
+
+
+
+
+I always thought of Macs the way I do Volkswagen: Nice, but overpriced for what you’re getting.  I’ve always liked a high screen resolution on my laptops and Macs could never give me that.  My 11” Sony had a 1366x800 screen resolution which I loved.  My 13” had 1600x1024 (or something like that).  It was awesome and lightweight to boot.  I could even snag a unix-like command line with Cygwin. It did everything I needed it to do.
+Until I started programming…. 2 years ago, when I started in on Chef and Ruby, needing Rubygems and all the other disparate parts that come with managing laptop development environments, it all fell apart.  I’ve heard rumors that it’s possible to get ruby environments running with Cygwin.  As a matter of fact, I know you can because a couple of the Thoughtworks consultants forced to use client-supplied Windows laptops made it work.  But it was painful.  And I wanted no part of it. 
+I ad-hoc’d my way through for a while by using a Linux VM.  That worked ok, but it wasn’t really flexible enough for me.  Also, I ran into funky problems like some gems/tools worked on some Linux distros but not others.  But one thing almost everything in the ENTIRE WORLD works on is Mac OSX.  BECAUSE ALL THE DEVELOPERS ARE USING IT! And so all the Ruby and Python tools in the world work on OSX as well as common Linux distros (read: Ubuntu)
+I eventually discovered that I really wanted a Mac because I was so tired of devoting countless cycles to shoe-horning (yak shaving) things into a workable state on my windows laptop when I knew it would all just work on a Mac.  So I waited for the new Macbook Air to surface last July and grabbed one.  I’ve had it for 8 months and am pretty used to it now.  It doesn’t have the screen real estate that my last 13” had, but I’ve come to really love the touchpad and gestures.  I also love hot key empowerment and being able to type at a comfortable command line.  I love that, when I don’t know wtf the OS is doing, I can drop to a command line and figure it out.  I love that OSX comes with awesome built in tools like iPhoto and the VPN client.
+I still have days when I’m all key smashy omgwtf-fu mac, but they are rare.
+And then there was iPad…. I’ve never felt the need for a tablet.  I’m not on the road that much these days.  My laptop is fairly mobile.  I have tiny hands. No seriously, I shop for winter gloves in the boys section because all the women’s size small gloves are TOO BIG.  WTF are my tiny hands going to do with a tablet? 
+It turns out, strain to reach the letters in the middle of the keyboard.
+My recent experiences with different phones made me think I could ready for a tablet.  I’d canceled my iPhone contract and was going to sell it.  But I found myself continuing to read on the iPhone and use it for things at home via wifi.  I read a lot at night in bed in the dark. The new Samsung was too bright even with the brightness all the way down and the battery needed to be saved for when I actually needed to use the phone. I eventually got a light filter app whose sole duty is to dim the backlight even more.
+5 months later, I’m still using the iPhone.  I figured I might find some use for a tablet and maybe sell the iPhone.  Plus, I love the iPhone keyboards and the way iOS seems to read my mind when it’s autocorrecting (most of the time).  I’ve never connected well with the Android keyboards, even with auxiliary apps like SwiftKey.
+I now have a new iPad.  It’s really big.  I can’t really reach the letters in the center of the keyboard with my thumbs although it’s nice to type on when flat.  It’s also really slippery and hard to use in bed.  My case will come tomorrow.  This will hopefully keep it from sliding out of my hands and give me some texture to hang on to.
+
+
+
+
+
+
+I still won’t buy iTunes content except for a few things here and there.  I won’t buy the Apple TV.  I have a Roku that streams everything I need and for less money.  
+
+
+
+
+
+
+Disclaimer: I have been working with Chef for about 18 months and Puppet for about 5 minutes.  I don’t claim to be an expert on Puppet nor warranty this information in any way.  It could all be egregiously wrong.  This is simply a blog exploring what I’m learning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A thought on node construction: To be more transparent, these could also say 
+
+
+Puppet node information can either be described in the top level puppet/manifests/site.pp or site.pp can include a second file traditionally called nodes.pp.  Site.pp can also include puppet conditionals, environment descriptions and params that might be specific to an environment, similar to Chef’s override attributes.
+So, to recap, Chef and Puppet both have nodes.  Puppet describes many different objects which are all designated nodes.  Chef has chosen to break out object descriptions into roles and runlists for nodes.
+Chef progression: cookbook/recipe=> role => node Puppet progression: module/manifest => typed node description => specific/regex matched node description
+I picked up a Puppet gig recently.  The client already has an OS level Puppet install working.  My job is to use my understanding of automation tooling to configure an app stack.  I was pretty cocky.  I thought, well, I really know Chef after over a year working with it and extending it at another client, how hard can Puppet be? 
+It’s not hard really.  But it’s not cooperative either.  They look really similar, Puppet and Chef, but I’m finding it hard to get Puppet to do what I want.  First, I need to figure out what I want to do.  Then I automatically consider how I would do it in chef.  Then I have to figure out how to do it in Puppet.  This is harder than it sounds as a direct translation of something is not always the most useful, graceful or appropriate method.
+I keep wishing I could find an article or manual on the Interwebs called something like “Puppet for Chef Users,” where it would translate all the things done in Chef to what they do in Puppet.  I haven’t found it.  And I don’t have all the answers.  As you can see here, I actually have very few answers.  None really.  But I’m eking out answers as I go.
+Example: I want to set a node attribute. 
+Well, hm.  Ok.  A node is still a node(mostly) in Puppet.  Puppet has Facter instead of Ohai.  Right, I knew that.  So, then I have to address the philosophical question, is that the correct way to do what I want?  Do I add things like myapp_home, java_install_dir to Facter?  Yah, I think I do.  I want stuff outside the myapp module to know where the myapp log dir is, maybe (it could happen).
+Let’s say I do want to add custom facts.  That’s just like node attributes aren’t they?  I’m still not positive, but I’ve got to make a decision and start coding something.  I can always revise if I’m wrong.
+Alright, where’s the attributes file?  Whoops!  No attribute file.  I downloaded a sample Apache module from puppet labs in order to have an example to work with.  I needed the example to be complex enough to have custom attributes but not so complicated I couldn’t read it.  I figured an Apache server was a good compromise. 
+I found that Puppet modules can define new facts in the lib directory of the module.  Strangely, at first I thought it was defined in a directory called ‘plugins’ as I first noticed the new facts defined there.  But as I read the documentation on defining new facts, I realized that was the old directory. The new way dictates that all custom code goes in modules/myapp/lib. 
+The directory storing new facts has small rb files with code similar to ohai snippets.  This seemed like more coding than I needed, but I’m still not sure how to just set an attribute without writing a code snippet.  Here’s the code example I found:
+require ‘facter’Facter.add(:gem_passenger_version) do    setcode do %x{rpmquery –qf=’%{VERSION}’ rubygem-passenger} endend
+here’s my experimental code:
+require ‘facter’myapp_facts={“myapp_home” => “/opt/myapp”, “myapp_server_dir” => “/opt/myapp/server”,”myapp_log_dir” => “/var/log/myapp”}
+
+This is what came out of testing:
+[root@pixel rubylib]#  RUBYLIB=. facter|grep myappmyapp_home => /opt/myappmyapp_log_dir => /var/log/myappmyapp_server_dir => /opt/myapp/server
+So yay!  I figured it out. I added my puppet equivalent of node attributes.  Kind of.  As far as I can tell, Facter is not hierarchical a la Ohai, so my node attributes are flattened instead of in a hierarchy.
+To recap, in Chef/In Puppet:
+Coming soon, my adventures with Hiera and data storage, also Puppet ruby DSL vs Puppet Puppet DSL.
+Generalists are awesome.  Value them or you’re doomed.  They make the best diagnosticians, especially when systems are large, complex, distributed and workgroups reside in silos.
+Cloud is awesome.  Except when it’s not.  Understand your vulnerabilities. Plan for failure. Don’t abuse your ops guys. Don’t abuse your devs.  Be interested in what others are doing even if it doesn’t (seem to) directly apply to your job.
+Buy a fucking SSD.  Hack your kernel.  
+DNS is sexy.  
+Just because it’s up doesn’t mean it’s working.
+Why use IBM when we have Rabbit?
+Often the best solution is a hybrid.  Don’t reinvent the internets unless you’re feeling clever.
+Sales guys employ dragons and fire to prosecute leads.  Shun assholes.  OS projects should never skip over the governance role.  You can always tell who’s doing devops right because they are genuinely happy.
+Etsy used to be the anti-pattern for awesome until they experienced a culture shift causing them to become our role model for even more awesome.  LOLcats and LOLgoats make presentations even better.
+The best part about Surge is knowing that I was surrounded by so many smart people.  I love the hallway track and listening to others talk about their systems, the challenges and solutions.  I love hearing about project goals that would never have occurred to me.  I love all the ideas I get from all the smart people talking around me all the time.
+The only unfortunate part of the week was that there were several opposing talks where I would have liked to see both.  I hope that there are some videos posted eventually.
+
+ 
+What is DevOps?  2 years ago I had no idea.  I was living the cycle of poorly planned, crappily implemented projects where artisan server builds were the only way anything was built, even when it meant 125 servers.   I actually had a PM say to my team, “We don’t have TIME to plan!  You need to start building servers!”  I was gone for two weeks to Europe right after that and when I came back, one of my sysadmins had indeed kickstarted all 125 servers. We then spent the next 6 months fixing configurations via ssh cli foo (for i in servers; do ssh $i some monkeypatch;done).
+I tell you this anecdote so you can understand the utter delight and abandon with which I embraced the DevOps movment when introduced 18 months ago.  I was immediately wowed by the positive, inclusive attitude.  I read about continuous deployment, continuous integration, test driven deployment, configuration management tools and the personal experiences of several people.  I found the DTO blog, the Agile Admin and, of course, the Etsy Code as Craft blog.  
+ It’s great to see people engaged, animated and motivated to make things awesome.  Instead of being beat down, embracing the ops-as-victims lifestyle, they’ve taken charge of their world and started trying to change what’s not working instead of just turning into the troll under the bridge.  I’ve spent over 10 years in corporate and I know how easy it is to feel beat down by the constant cycle of develop, implement, fail, support the failure forever.  So I love me a movement that engages and tries to proactively to end the failure cycle.  
+In June I had my first community interaction events at Velocity and Devopsdays, in San Jose. The atmosphere was different from any other industry conference I’ve attended in the past.  It was awesome.  The energy was amazing.  Many of the talks were inspiring(John Allspaw, Adam Jacob, I’m talking to you).  I finished the week with a hyperactive energy and desire to channel that energy into about 10 new things I’d learned about.
+A common theme during presentations, panels  and over beer was the attempt to define the DevOps movement.  I heard a lot of people at Velocity tell me what it’s not.  It’s not a tool, it’s not a job, it’s not a job description; it’s not a title.  I heard a lot of, “if you claim to be ‘devops,’ yer doin it wrong.”
+ Interestingly, in high school and college, I ran with a punk rock/goth crowd with a similar attitude.  “If you claim you’re punk rock or goth, yer doin it wrong.”  We were too cool for labels.  In our own minds, we were outside the labeling system.  Sticking a label on us or on yourself was lame and small minded.  We’d say things like, “I’m not goth.  I’m just myself.  I don’t conform to labels.”  We were pretentious by pretending that only pretentious people actually labeled themselves.  If you claimed to be punk, obviously you were a poser.
+I’m sensing a lot of that same attitude from the folks who say, “if you call yourself a devop, yer doin it wrong.”  I understand some of the desire to protect the movement from spoilage and the term from overuse.  We want to keep our counterculture to ourselves.  It’s not for the likes of HP and IBM and their re-branding of old, tired products.  
+I understand what people mean.  Labels get in the way of the movement.  Labels are limiting and, if you say you “do devops” you risk limiting yourself and the perceptions of others. I can even empathize.  Every time a job comes through my inbox labeled “devops,” I cynically assume it’s someone who wants to rope some poor sap of a sysadmin into a crap job by labeling it with something cool, probably hoping to get two kinds of work for the price of one. 
+Everyone claims to be living in the DevOps moment, but what does it really mean?  Several people have asked this question and tried to answer it.  My business card has ‘DevOps’ on it.  But it also says Problem Solving, Middleware and other things.  How dare I list Devops among my skill set?  Here’s the thing.  If DevOps isn’t a tool, if it isn’t a job description, if it isn’t a title, it still must describe something right?  It can’t be an empty set.  Here’s what I was thinking when I put it on my card.  DevOps is a framework and a philosophy.  It’s a lightly codified framework for an attitude and approach to solving problems. DevOps contains the seeds from which a better culture can grow.  It assumes inclusiveness, accountability and that everyone is smart. It dismisses boundaries. When I put DevOps on my business card, what I’m saying is, the word defines part of the way I think, the way I approach problem solving and it also defines the attitude I’m looking for when evaluating engagements.
+Because of all the positive vibe around DevOps, it bothers me when I see snotty tweets or hear snarky remarks during conference presentations.  You can call bullshit when HP starts trying to claim that its monitoring suite is “devops friendly,” or when Gartner starts writing articles that could be subtitled “How to cash in on the DevOps movement.”  But projecting an attitude of exclusivity or just plain snark because you’re feeling protective can only hurt things.  New folks are continually stumbling upon parts of DevOps or agile infrastructure as a movement.  Some of them have been living the attitude for years and maybe just now realizing there are others out there.  I guess I’d rather be a hippy flashing a peace sign at people who happen across DevOps than a hipster turning my nose up at anyone who doesn’t meet my specific criteria for cool.
+ 
+ 
+About 4 years ago, I was working for a remote client, building a  large, fragile Yantra/WebSphere environment.  The client had chosen to  use the WebSphere embedded messaging engine (instead of MQ) for systems  critical order processing.  The project was big, I was busy, traveling  to the client site every week and I had a constant backlog of work.  It  seemed like there was never enough time or people to get all the work  done.
+
+
+
+
+
+
+I was just telling this story last week and thought that it could  really stand repeating for posterity.  Taking the extra time to write a  script that automates a lame manual process is NEVER time wasted.  Not  ever.  And if anyone tries to tell you differently, you’re probably too  smart to be working with them.﻿
+The plugin at github
+When we started the Chef infrastructure automation project last year,  a dev team started up at nearly the same time.  I didn’t know enough  about Chef to have (much of) an opinion on how others were addressing  cookbook issues they faced. So for the first few months, I worked on my  problems to solve while the devs worked on theirs.  I did eventually  started paying attention to what was going on with the dev team and  discovered that they had started to create role names that looked like  app_name_env(e.g. riak_prod), causing a role for each app to be created  in each environment, but with nearly identical run lists.  They were  labeling their attributes with environment and used the roles to sort  them out.
+So we came up with a quick solution.  We created an attribute called  node[:env] and put it in a role called env_dev, env_qa, etc.  And the  same goes for other things we needed to set like node[:swimlane] and  node[:zone]. Every time a node was created, relevant env attribute roles  were added along with the platform_base and any application roles.  We  all refactored our code and started using the env variable to sort out  environment-specific attributes. This worked well in the short term, for  about 6 months.
+About 2 months ago, we started planning for provisioning a second  data center.  With another data center containing two environments (prod  and stage) came a location issue.  Now we have two sets of ntp servers,  different DNS servers and a whole host of location-specific coding  issues. I went to go add some location-specific roles and started  thinking about the refactoring we’d need to do to account for two  locations.
+As I started to make the first role, I realized that this was quickly  becoming an unwieldy solution.  We were configuring the nodes managed  by our automation system by hand.  This boggled me. And the number of managed nodes continues to grow.
+ 
+One of the problems we struggle with is that we have no system of  record.  We get most of our new server info on spreadsheets from various  project teams or ops/mgmt teams.  We can’t call any central system API  to get info.  All the servers have static IPs and minimum of two  networks. The ops team doesn’t believe in DNS. So we have to keep all of  this information somewhere or figure out clever ways to deduce the  information we want (or set roles by hand, ugh!).
+A secondary problem I had with the roles is that their attributes  weren’t set early enough for me to use logic in the attributes file.   Node[:env] didn’t get set until after attributes files were compile  which was causing me other problems.
+So as I thought about the location role, I rebelled.  I was done setting roles by hand.  UGH!
+All of our host names are the same length and contain a rich amount  of data encoded in their names.  I thought that there must be a way to  extract and label that information for use as node attibutes.  I’m no  Ruby genius and I still struggle with anything beyond fancy scripting,  but it’s extra fun for me to run at a problem head on and obsess over  it. And that’s what I did. 
+When I came out of the weekend, I had an oHai plugin that parsed a  host name, set 3 top level attributes and 5 nested attributes thatI  thought might be useful for logic in cookbooks.  It looks like this:
+[root@pxqpkyapp05 tmp]# ohai -f /tmp/plugins/parse_host_plugin.rb  -l debug [Fri, 24 Jun 2011 19:09:09 -0500] DEBUG: ohai plugin: parse_host: parsing new host pxqpkyapp05 {
+  “environment”: “qa”   “location”: “pismo”,   “hostdata”: {     “server_type”: “application”,     “loc”: “p”,     “env”: “q”,     “application”: “Pooky”,     “platform”: “solaris”   }, } ﻿
+I didn’t think this would be useful to anyone but us.  Surely  everyone else was using Chef in the cloud, right?  Heck no.  It turns  out, as I was chatting with folks at Velocity last week, that several  people are data center-bound with encoded host names.  Discussing it, I  thought it might be useful to share, even if it would require some  tweaking to make it work with any else’s environment.
+Basically, I set a hash with environment data and then set variables  using a regex on the host name.  I set the environment and location vars  separately and then put indexes in the hash for any values I want to  add into the hostdata hash.  I took most of our custom logic out, like  the node[:zone] logic that no one needs, although I left in a custom  piece I had to add for an oddly named environment at a third data center  location.  All app names and locations have been changed to protect the  innocent (that’s me).
+I hope someone else can use it.  It was my first step beyond recipes  and I’m rather proud of it. I’ve already had a request from a team mate  to move the logic to a library so that we can use it in our host  management activities and that’s what I’m working on now.  I’ve created a  class and a function that uses the class, but need to translate it to  Chef-specific DSL.
+Here are some examples of how we’re using them:
+ 
+in the recipe: dnsinfo = search(:dns, “id:#{node.location}”)
+in the template:
+domain <%= @dnsinfo[“domain”] %>search <%= @dnsinfo[“search”] %><% @dnsinfo[“nameservers”].each do |ns| %>nameserver <%= ns %><% end %>
+# Unload unwanted packagesunless node.env == “dev” || node.attribute?(“keep_gcc”) package “gcc” do   action :remove endend
+
+chefsearch = search(“chef_servers”,”env:#{node.env} AND id:#{node.hostdata.loc}*”).firstnode.set.chef.my_chef_server = chefsearch[“id”]
+node.set.chef.server_url = “http://#{node.chef.my_chef_server}”node.set.chef.mrepo_url = “http://#{node.chef.my_chef_server}/mrepo”node.set.chef.proxy_url = “http://#{node.chef.my_chef_server}:8000”
+ 
+This will also come in handy once we’ve migrated to .10 where we can  set so many more things within Chef based on environment.  The plugin is  phrased in functions as my original plugin file was rather messy with  comments and things.  I felt like breaking it down this way made it  easier to follow wth was going on.
+Please let me know if you find this useful or if you have questions.   This is my first community contribution and so I’m kind of like the kid  with the cool shiny thing they want to show everyone.  Look at my  shiny!
+I’m a professional services consultant for a truly enormous  corporation; for two more weeks.  I turned in my two week notice today.   I think I’m all done working for big companies.  I spent 8 years at a  major retail chain doing web architecture, middleware and ops and the  last 5 years consulting for the hosting, management and monitoring  portion of a megacorp. 
+When I took this job, it was with a group that had been a much  smaller, recently acquired company.  The feel was still pretty casual,  annual reviews were barely a formality, attitudes were laid back and  friendly and we rarely had to interact externally to our area. We had  separate time tracking, VPN and client systems access.  I was told that  it still had a small-company feel and they were right mostly.  I used a  separate VPN for email, travel booking and expense reporting.  I was  sheltered from the corporation.  All the engineers were.
+This isn’t a rant about why corporations suck.  They’ve got a lot  going for them.  This one kept me in a 6 figure salary, great benefits  and a 6% 401k match. I got paid even when I was benched, although that  wasn’t often.  If you’re traditionally ambitious(re: mgmt chain), I hear  they’re great for that too.  If you’re a slacker, you get a pass at a  big company.  It’s hard to be noticed.
+Yeah.  It’s hard to be noticed.  We’ve been through several re-orgs  since I was hired.  ProServ was moved out of management and monitoring.   The work started getting monotonous.  Half of ProServ was re-orgd out  of our group.  We kept getting moved around.  All our dedicated PMs were  moved to a central PMO.  The ProServ team was largely forgotten except  by a few folks who managed our existing client base.  Senior management  probably forgot we existed.   We haven’t had a team meeting in a year.  My manager’s manager thinks I’m a man.
+About a year ago I realized I was bored. I realized that, if I had to  architect one more WebSphere install, I might scream.  No interesting  work was coming in.  Very little work at all was coming in, for that  matter.  I never lacked for work myself, but half my team was benched.  I  started thinking about quitting.  Then a call came in.
+A friend working at one of our current clients was starting a  continuous integration project.  He used to work for the same megacorp  and we’d been friends for years.   The work was outside my immediate  realm of experience.  Learn Ruby, learn a new configuration management  tool called Chef and start figuring out how to automate the existing  infrastructure at this client.  I was skeptical.  I’m pretty smart but I  have a realistic assessment of my own abilities and I had no coding  experience beyond some bash and python scripting.
+So I dug in.  I learned some Ruby syntax.  I started figuring out  Chef.  It was a steep curve but it was so interesting, fun and exciting  that I was thrilled with work for the first time in ages.  I learned the  term “devops.”  I read a bunch of blogs.  I got really excited, in that  born again annoying kind of way.  I knew it too and pretty much kept it  to myself, although sometimes at parties, I started gushing if someone  asked about work. 
+I’ve spent the last year doing some awesome work.  The client  experience has been incredible.  The dev teams we’re working next to are  practicing agile concepts.  We work in a large open space, with pairing  monitors everywhere and you can’t throw a pen without hitting corporate  issue macs.  The dev teams pair and we sometimes cross-team pair on  things.  Our team has a 10 min standup every morning.  We track stories  in a tool and showcase at our weekly planning (usually code review since  Chef configs aren’t really “featurable”).  We’re getting monitors soon  and trying to figure out how to hook Chef into graphite to start  metricizing.
+Something that really resonated with me at Velocity on the last day  was Adam Jacob who said, “You can tell the people who are doing devops  right because they’re HAPPY all the time.”  That’s what it’s been like.   I’ve never enjoyed anything so much as I have this last year.
+Unfortunately, working for a megacorp has intruded on my professional  happiness too many times this year for me to ignore it any longer.   I’ve known for a few months that this was coming.  The project work I’ve  been doing for the last year has been awesome and I don’t want to leave  it behind.  Growing my Ruby development skills has been super fun and a  big challenge.  I hope to do more of that going forward and am planning  to work on my own projects as well. 
+In the meantime, I’m going to take a little time off, ride my bike,  write some code, evaluate my options and see what’s out there for me.
